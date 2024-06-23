@@ -1,4 +1,4 @@
-import Example from "../components/common/Exemple/Exemple";
+import Footer from "../components/common/Footer/Footer";
 import Header from "../components/common/Header/Header"
 import HomeBanner from "../components/common/HomeBanner/HomeBanner";
 
@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <Header />
       <HomeBanner />
-      {/* <Example /> */}
+      <Footer />
     </div>
   );
 }
