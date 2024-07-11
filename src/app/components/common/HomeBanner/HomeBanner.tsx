@@ -51,22 +51,23 @@ export default function HomeBanner() {
             <div className="text-center py-16">
               <div className="animate__animated animate__fadeInLeft">
                 <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                  We specialize in UI/UX, Web Development, Digital Marketing.
+                  Trabalho para defender seus Direitos
                 </h1>
                 <p className="text-lg text-white mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla magna mauris. Nulla fermentum viverra sem eu rhoncus consequat varius nisi quis, posuere magna.
+                  Sou advogada com mais de 10 anos de experiência, atuante em processos judiciais e extrajudiciais.
+                  Atuante em Direito da Saúde, Violência Obstétrica,Erro Médico, em favor dos consumidores/Pacientes e Benefícios Assistenciais- BPC/LOAS.
                 </p>
 
-                <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                  <a href="#" className="inline-block px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-md hover:bg-blue-700 transition duration-300">
-                    Get Started Now
+                <div className="cta-container rounded-3xl flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                  <a href="#" className="cta-button inline-block px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-3xl hover:bg-blue-700 transition duration-300">
+                    ENTRAR EM CONTATO
                   </a>
 
                   <span className="text-center sm:text-left">
-                    <a href="#" className="inline-block text-lg font-medium text-blue-600 hover:underline">
-                      Call us (0123) 456 – 789
-                    </a>
-                    <span className="block text-white">For any question or concern</span>
+                    <p className="inline-block text-lg font-medium text-green-500">
+                      Atendimento 100% digital
+                    </p>
+                    <span className="block text-white sm:text-black">Temos clientes em todos os estados do Brasil.</span>
                   </span>
                 </div>
               </div>

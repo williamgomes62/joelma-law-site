@@ -6,3 +6,15 @@
   background-size: cover;
   padding-top: 82px;
 }
+
+@media (min-width: 640px) {
+  .cta-container {
+    background: #FFF;
+    padding: 8px;
+    border-radius: 32px;
+  }
+}
+
+.cta-container .cta-button {
+  border-radius: 32px;
+}
