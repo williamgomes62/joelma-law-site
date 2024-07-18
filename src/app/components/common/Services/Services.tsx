@@ -1,7 +1,4 @@
 'use client';
-//import './styles.css';
-import 'tailwindcss/tailwind.css';
-
 import React, { useEffect, useRef } from 'react';
 import { FaBalanceScale, FaShieldAlt } from 'react-icons/fa'; // Exemplo de ícones, você pode escolher outros
 
@@ -20,11 +17,11 @@ const services = [
 ];
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-10 hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105">
+  <div className="bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-[-10px] hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105">
     <div className="mb-4">{icon}</div>
     <h3 className="text-blue-600 text-2xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600 mb-4">{description}</p>
-    <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full hover:from-green-500 hover:to-green-700 transform transition-transform hover:scale-110">
+    <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
       Saiba Mais
     </button>
   </div>
@@ -41,7 +38,7 @@ const Services = () => {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.add('animate-fade-in-down');
             observer.unobserve(entry.target);
           }
         });

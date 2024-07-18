@@ -8,7 +8,6 @@ export default function Home() {
     <div>
       <Header />
       <HomeBanner />
-      {/* <HomeBanner /> */}
       <Services />
       <Footer />
     </div>
