@@ -33,13 +33,27 @@ const services = [
 ];
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="relative bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-[-10px] hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105 w-full sm:w-64">
-    <div className="flex items-center mb-4">
-      <div className="mr-4">{icon}</div>
-      <h3 className="text-blue-600 text-2xl font-semibold text-left">{title}</h3>
+  <div
+    className="
+      relative bg-white rounded-lg shadow-lg p-6
+      text-center border-t-8 border-blue-600 transform
+      transition-all duration-500 opacity-0 translate-y-[-10px]
+      group hover:translate-y-0 hover:shadow-2xl hover:border-green-500
+      hover:scale-105 w-full sm:w-64 mt-6 mb-4">
+    <div className="flex justify-center">
+      <div className="absolute top-[-32px] bg-white p-2 rounded-full border border-blue-600 transition-colors duration-500 group-hover:border-green-500">
+        <div className="text-blue-600 group-hover:text-green-500 transition-colors duration-500">
+          {icon}
+        </div>
+      </div>
     </div>
-    <p className="text-gray-600 mb-4">{description}</p>
-    <div className="absolute inset-x-0 bottom-[-24px] flex justify-center">
+    <div className="mt-6">
+      <h3 className="text-blue-600 text-2xl font-semibold text-center mb-2">
+        {title}
+      </h3>
+      <p className="text-gray-600 mb-4">{description}</p>
+    </div>
+    <div className="absolute inset-x-0 bottom-[-20px] flex justify-center">
       <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
         Saiba Mais
       </button>
