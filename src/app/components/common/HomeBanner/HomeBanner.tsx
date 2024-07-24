@@ -13,6 +13,9 @@ export default function HomeBanner() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center py-16 col-span-2">
               <div className="animate__animated animate__fadeInLeft">
+                <div className="m-0 mb-4 w-fit p-3 px-6 border border-solid border-white rounded-xl">
+                  <h2 className="text-xl m-0 p-0 leading-tight">Advocacia Especializada</h2>
+                </div>
                 <h1 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">
                   Trabalho para defender seus Direitos
                 </h1>

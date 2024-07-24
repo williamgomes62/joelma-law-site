@@ -1,6 +1,12 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import { FaBalanceScale, FaShieldAlt } from 'react-icons/fa'; // Exemplo de ícones, você pode escolher outros
+import {
+  FaBalanceScale,
+  FaShieldAlt,
+  FaUserShield,
+  FaUsers,
+  FaCheckCircle
+} from 'react-icons/fa'; // Exemplo de ícones, você pode escolher outros
 
 const services = [
   {
@@ -12,6 +18,16 @@ const services = [
     icon: <FaShieldAlt size={40} className="text-blue-600" />,
     title: 'Direito Previdenciário',
     description: 'Aconselhamento e representação em questões previdenciárias.'
+  },
+  {
+    icon: <FaUserShield size={40} className="text-blue-600" />,
+    title: 'Direito do Consumidor',
+    description: 'Proteção e defesa dos direitos do consumidor.'
+  },
+  {
+    icon: <FaUsers size={40} className="text-blue-600" />,
+    title: 'Direito da Família',
+    description: 'Consultoria e representação em questões de direito familiar.'
   }
   // Adicione mais serviços conforme necessário
 ];
@@ -26,6 +42,54 @@ const ServiceCard = ({ icon, title, description }) => (
     </button>
   </div>
 );
+
+const ServiceInfoSection = () => {
+  const IconBox = ({ icon, title }) => {
+    return (
+      <div className="flex items-center p-4 bg-gray-800 shadow-lg rounded-lg">
+        <div className="text-blue-500 text-4xl mr-4">
+          {icon}
+        </div>
+        <div>
+          <h3 className="text-lg font-medium text-white">{title}</h3>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="bg-gray-900 py-6">
+      <div className="container mx-auto px-6 text-white">
+        <div className="md:flex md:items-center md:justify-between">
+          <div className="mb-8 md:mb-0 md:w-1/3">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Nosso serviço <span className="text-blue-500 font-bold">funciona assim:</span>
+            </h2>
+          </div>
+          <div className="flex flex-col space-y-4 md:w-2/3">
+            <IconBox 
+              icon={<FaCheckCircle />} 
+              title="Receba seu benefício de onde estiver"
+            />
+            <IconBox 
+              icon={<FaCheckCircle />} 
+              title="Atendimento humanizado e 100% Online"
+            />
+            <IconBox 
+              icon={<FaCheckCircle />} 
+              title="Caso tenha direito, entramos com o seu Benefício"
+            />
+          </div>
+        </div>
+        <div className="mt-8 flex justify-center">
+          <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+            Fale com um advogado especialista
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const Services = () => {
   const sectionRef = useRef(null);
@@ -61,7 +125,10 @@ const Services = () => {
 
   return (
     <div ref={sectionRef} className="p-10 bg-gray-100">
-      <h2 className="text-center text-4xl font-bold text-blue-600 mb-10">Nossos Serviços</h2>
+      <div className="title-container mb-10">
+        <p className="text-center text-2xl text-blue-600">SERVIÇOS</p>
+        <h2 className="text-center text-4xl font-bold text-blue-600">Como podemos ajudar?</h2>
+      </div>
       <div className="flex flex-wrap gap-8 justify-center">
         {services.map((service, index) => (
           <ServiceCard
@@ -76,4 +143,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export { ServiceInfoSection, Services };
