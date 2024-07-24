@@ -33,7 +33,7 @@ const services = [
 ];
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-[-10px] hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105">
+  <div className="bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-[-10px] hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105 w-full sm:w-64">
     <div className="mb-4">{icon}</div>
     <h3 className="text-blue-600 text-2xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600 mb-4">{description}</p>
@@ -67,16 +67,16 @@ const ServiceInfoSection = () => {
             </h2>
           </div>
           <div className="flex flex-col space-y-4 md:w-2/3">
-            <IconBox 
-              icon={<FaCheckCircle />} 
+            <IconBox
+              icon={<FaCheckCircle />}
               title="Receba seu benefício de onde estiver"
             />
-            <IconBox 
-              icon={<FaCheckCircle />} 
+            <IconBox
+              icon={<FaCheckCircle />}
               title="Atendimento humanizado e 100% Online"
             />
-            <IconBox 
-              icon={<FaCheckCircle />} 
+            <IconBox
+              icon={<FaCheckCircle />}
               title="Caso tenha direito, entramos com o seu Benefício"
             />
           </div>
