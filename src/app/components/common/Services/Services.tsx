@@ -33,13 +33,17 @@ const services = [
 ];
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-[-10px] hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105 w-full sm:w-64">
-    <div className="mb-4">{icon}</div>
-    <h3 className="text-blue-600 text-2xl font-semibold mb-2">{title}</h3>
+  <div className="relative bg-white rounded-lg shadow-lg p-6 text-center border-t-8 border-blue-600 transform transition-all duration-500 opacity-0 translate-y-[-10px] hover:translate-y-0 hover:shadow-2xl hover:border-green-500 hover:scale-105 w-full sm:w-64">
+    <div className="flex items-center mb-4">
+      <div className="mr-4">{icon}</div>
+      <h3 className="text-blue-600 text-2xl font-semibold text-left">{title}</h3>
+    </div>
     <p className="text-gray-600 mb-4">{description}</p>
-    <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
-      Saiba Mais
-    </button>
+    <div className="absolute inset-x-0 bottom-[-24px] flex justify-center">
+      <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
+        Saiba Mais
+      </button>
+    </div>
   </div>
 );
 
