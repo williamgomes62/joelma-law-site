@@ -11,6 +11,17 @@ header {
     rgba(0, 0, 0, 0) 100%
   );
   backdrop-filter: blur(88px); */
+  background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+}
+
+header .main-menu.scrolled {
+  background-color: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(8px);
+}
+
+header .main-menu.scrolled a, 
+header .main-menu.scrolled .logo {
+  color: #FFF;
 }
 
 /* .logo img {

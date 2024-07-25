@@ -22,10 +22,19 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className={`font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>
+    <header className="fixed w-full top-0 z-50 transition-all duration-300">
+      {/* Top menu */}
+      <div className="w-full bg-gray-800 text-white py-2">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <div className="text-sm">
+            <span>Email: contact@example.com</span> | <span>Phone: (123) 456-7890</span>
+          </div>
+        </div>
+      </div>
+      {/* Main menu */}
+      <div className={`main-menu transition-all duration-300 ${isScrolled ? 'bg-white shadow-md scrolled' : 'bg-transparent'}`}>
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className={`logo font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>
             Logo
           </div>
           <div className="hidden md:flex space-x-6">
@@ -69,3 +78,4 @@ const Header = () => {
 };
 
 export default Header;
+
