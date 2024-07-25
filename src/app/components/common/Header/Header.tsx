@@ -1,104 +1,71 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
+'use client';
 import './Header.css';
-import Image from 'next/image';
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import React, { useState, useEffect } from 'react';
+import { Transition } from '@headlessui/react';
 
-const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Sobre', href: '#' },
-  { name: 'Serviços', href: '#' },
-  { name: 'Contato', href: '#' },
-]
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Image
-              className="h-8 w-auto"
-              src="/assets/images/logo.jpeg"
-              alt="Law Firm Logo"
-              width={50} height={50}
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
-              {item.name}
-            </a>
-          ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Contato <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </nav>
-      <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <Image
-                className="h-8 w-auto"
-                src="/assets/images/logo.jpeg"
-                alt=""
-              />
-            </a>
+    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className={`font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>
+            Logo
+          </div>
+          <div className="hidden md:flex space-x-6">
+            <a href="#home" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</a>
+            <a href="#about" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>About</a>
+            <a href="#services" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Services</a>
+            <a href="#contact" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contact</a>
+          </div>
+          <div className="md:hidden flex items-center">
             <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setIsOpen(!isOpen)}
+              className={`focus:outline-none relative w-8 h-8 transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <span className={`block absolute h-0.5 w-8 bg-current transform transition duration-300 ease-in-out ${isOpen ? 'rotate-45 top-4' : 'top-2'}`}></span>
+              <span className={`block absolute h-0.5 w-8 bg-current transform transition duration-300 ease-in-out ${isOpen ? 'opacity-0 translate-x-8' : 'opacity-100 top-4'}`}></span>
+              <span className={`block absolute h-0.5 w-8 bg-current transform transition duration-300 ease-in-out ${isOpen ? '-rotate-45 top-4' : 'top-6'}`}></span>
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
-              </div>
-            </div>
+        </div>
+      </div>
+      <Transition
+        show={isOpen}
+        enter="transition ease-out duration-300"
+        enterFrom="opacity-0 transform -translate-y-4"
+        enterTo="opacity-100 transform translate-y-0"
+        leave="transition ease-in duration-200"
+        leaveFrom="opacity-100 transform translate-y-0"
+        leaveTo="opacity-0 transform -translate-y-4"
+      >
+        <div className="md:hidden bg-white shadow-md">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" className="block text-gray-800 hover:text-gray-600">Home</a>
+            <a href="#about" className="block text-gray-800 hover:text-gray-600">About</a>
+            <a href="#services" className="block text-gray-800 hover:text-gray-600">Services</a>
+            <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contact</a>
           </div>
-        </DialogPanel>
-      </Dialog>
+        </div>
+      </Transition>
     </header>
-  )
-}
+  );
+};
+
+export default Header;
