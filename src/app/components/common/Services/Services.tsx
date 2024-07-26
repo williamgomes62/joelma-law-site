@@ -8,7 +8,14 @@ import {
   FaCheckCircle
 } from 'react-icons/fa'; // Exemplo de ícones, você pode escolher outros
 
-const services = [
+// Tipagem para o tipo de serviço
+interface Service {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const services: Service[] = [
   {
     icon: <FaBalanceScale size={40} className="text-blue-600" />,
     title: 'BPC/Loas',
@@ -32,7 +39,14 @@ const services = [
   // Adicione mais serviços conforme necessário
 ];
 
-const ServiceCard = ({ icon, title, description }) => (
+// Tipagem para as props do ServiceCard
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
   <div
     className="
       relative bg-white rounded-lg shadow-lg p-6
@@ -61,60 +75,62 @@ const ServiceCard = ({ icon, title, description }) => (
   </div>
 );
 
-const ServiceInfoSection = () => {
-  const IconBox = ({ icon, title }) => {
-    return (
-      <div className="flex items-center p-4 bg-gray-800 shadow-lg rounded-lg">
-        <div className="text-blue-500 text-4xl mr-4">
-          {icon}
-        </div>
-        <div>
-          <h3 className="text-lg font-medium text-white">{title}</h3>
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <div className="bg-gray-900 py-6">
-      <div className="container mx-auto px-6 text-white">
-        <div className="md:flex md:items-center md:justify-between">
-          <div className="mb-8 md:mb-0 md:w-1/3">
-            <h2 className="text-2xl md:text-3xl font-semibold">
-              Nosso serviço <span className="text-blue-500 font-bold">funciona assim:</span>
-            </h2>
-          </div>
-          <div className="flex flex-col space-y-4 md:w-2/3">
-            <IconBox
-              icon={<FaCheckCircle />}
-              title="Receba seu benefício de onde estiver"
-            />
-            <IconBox
-              icon={<FaCheckCircle />}
-              title="Atendimento humanizado e 100% Online"
-            />
-            <IconBox
-              icon={<FaCheckCircle />}
-              title="Caso tenha direito, entramos com o seu Benefício"
-            />
-          </div>
-        </div>
-        <div className="mt-8 flex justify-center">
-          <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
-            Fale com um advogado especialista
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+// Tipagem para as props do IconBox
+interface IconBoxProps {
+  icon: React.ReactNode;
+  title: string;
 }
 
-const Services = () => {
-  const sectionRef = useRef(null);
+const IconBox: React.FC<IconBoxProps> = ({ icon, title }) => (
+  <div className="flex items-center p-4 bg-gray-800 shadow-lg rounded-lg">
+    <div className="text-blue-500 text-4xl mr-4">
+      {icon}
+    </div>
+    <div>
+      <h3 className="text-lg font-medium text-white">{title}</h3>
+    </div>
+  </div>
+);
+
+const ServiceInfoSection: React.FC = () => (
+  <div className="bg-gray-900 py-6">
+    <div className="container mx-auto px-6 text-white">
+      <div className="md:flex md:items-center md:justify-between">
+        <div className="mb-8 md:mb-0 md:w-1/3">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Nosso serviço <span className="text-blue-500 font-bold">funciona assim:</span>
+          </h2>
+        </div>
+        <div className="flex flex-col space-y-4 md:w-2/3">
+          <IconBox
+            icon={<FaCheckCircle />}
+            title="Receba seu benefício de onde estiver"
+          />
+          <IconBox
+            icon={<FaCheckCircle />}
+            title="Atendimento humanizado e 100% Online"
+          />
+          <IconBox
+            icon={<FaCheckCircle />}
+            title="Caso tenha direito, entramos com o seu Benefício"
+          />
+        </div>
+      </div>
+      <div className="mt-8 flex justify-center">
+        <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+          Fale com um advogado especialista
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const Services: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const cards = section.querySelectorAll('.transform');
+    const cards = section?.querySelectorAll('.transform') || [];
 
     const observer = new IntersectionObserver(
       entries => {
