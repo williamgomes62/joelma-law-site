@@ -20,7 +20,8 @@ header .main-menu.scrolled {
 }
 
 header .main-menu.scrolled a, 
-header .main-menu.scrolled .logo {
+header .main-menu.scrolled .logo,
+header .main-menu.scrolled button {
   color: #FFF;
 }
 
