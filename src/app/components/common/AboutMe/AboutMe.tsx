@@ -6,7 +6,7 @@ const AboutMe = () => {
   return (
     <section className="bg-gray-100 py-16 px-4 relative overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row">
-        {/* Bloco de Texto e Gradiente */}
+        {/* Bloco de Texto */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-center md:text-left z-10">
           <h3 className="text-xl text-gray-500 mb-2">Bem-vindo ao meu perfil</h3>
           <h2 className="text-4xl font-bold text-blue-800 mb-6">Sobre Mim</h2>
@@ -47,16 +47,18 @@ const AboutMe = () => {
           </div>
         </div>
         
-        {/* Imagem de Perfil com Gradiente Personalizado */}
-        <div className="hidden md:block md:w-1/2 relative h-screen">
-          <Image
-            src='/assets/images/about-me.jpeg'
-            alt="Perfil"
-            layout="fill"
-            objectFit="cover"
-            className="absolute inset-0"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_40%)]"></div>
+        {/* Imagem de Perfil com Gradiente Personalizado e Efeitos de Estilo */}
+        <div className="hidden md:block md:w-1/2 relative h-screen overflow-hidden">
+          <div className="absolute inset-0 rounded-r-lg">
+            <Image
+              src='/assets/images/about-me.jpeg'
+              alt="Perfil"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-r-lg"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_40%)]"></div>
+          </div>
         </div>
       </div>
     </section>
