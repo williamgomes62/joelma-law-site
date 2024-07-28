@@ -3,11 +3,12 @@ import './Header.css';
 
 import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaClock, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +23,15 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <header className="fixed w-full top-0 z-50 transition-all duration-300">
       {/* Top menu */}
       <div className="w-full bg-gray-800 text-white py-2">
-        <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="container mx-auto px-6 flex flex-wrap justify-between items-center">
           <div className="text-sm flex items-center space-x-4">
             <div className="flex items-center">
               <FaEnvelope className="mr-1" />
@@ -35,6 +40,13 @@ const Header = () => {
             <div className="flex items-center">
               <FaPhoneAlt className="mr-1" />
               <span className="hidden sm:inline">(31) 99579-2679</span>
+            </div>
+            <div className="flex items-center">
+              <FaClock className="mr-1 cursor-pointer" onClick={toggleModal} />
+            </div>
+            <div className="flex items-center">
+              <FaMapMarkerAlt className="mr-1" />
+              <span className="hidden sm:inline"><a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">123 Main St, City</a></span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -93,8 +105,47 @@ const Header = () => {
             <a href="#services" className="block text-gray-800 hover:text-gray-600">Services</a>
             <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contact</a>
           </div>
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <a href="https://facebook.com" className="text-gray-800 hover:text-gray-600">
+                <FaFacebook />
+              </a>
+              <a href="https://twitter.com" className="text-gray-800 hover:text-gray-600">
+                <FaTwitter />
+              </a>
+              <a href="https://linkedin.com" className="text-gray-800 hover:text-gray-600">
+                <FaLinkedin />
+              </a>
+              <a href="https://instagram.com" className="text-gray-800 hover:text-gray-600">
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
         </div>
       </Transition>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+            <FaTimes
+              onClick={toggleModal}
+              className="absolute top-2 right-2 text-gray-800 cursor-pointer hover:text-gray-600"
+              size={24}
+            />
+            <h2 className="text-2xl font-semibold mb-4 text-black">Horário de Funcionamento</h2>
+            <ul className="text-lg text-gray-800">
+              <li className="mb-2"><strong>Domingo:</strong> Fechado</li>
+              <li className="mb-2"><strong>Segunda-feira:</strong> 07:30–18:00</li>
+              <li className="mb-2"><strong>Terça-feira:</strong> 07:30–18:00</li>
+              <li className="mb-2"><strong>Quarta-feira:</strong> 07:30–18:00</li>
+              <li className="mb-2"><strong>Quinta-feira:</strong> 07:30–18:00</li>
+              <li className="mb-2"><strong>Sexta-feira:</strong> 07:30–18:00</li>
+              <li className="mb-2"><strong>Sábado:</strong> 08:00–14:00</li>
+            </ul>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
