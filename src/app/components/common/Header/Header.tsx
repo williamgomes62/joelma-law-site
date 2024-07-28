@@ -3,6 +3,7 @@ import './Header.css';
 
 import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
+import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,8 +27,29 @@ const Header = () => {
       {/* Top menu */}
       <div className="w-full bg-gray-800 text-white py-2">
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="text-sm">
-            <span>Email: contact@example.com</span> | <span>Phone: (123) 456-7890</span>
+          <div className="text-sm flex items-center space-x-4">
+            <div className="flex items-center">
+              <FaEnvelope className="mr-1" />
+              <span className="hidden sm:inline">contact@example.com</span>
+            </div>
+            <div className="flex items-center">
+              <FaPhoneAlt className="mr-1" />
+              <span className="hidden sm:inline">(31) 99579-2679</span>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <a href="https://facebook.com" className="text-white hover:text-gray-300">
+              <FaFacebook />
+            </a>
+            <a href="https://twitter.com" className="text-white hover:text-gray-300">
+              <FaTwitter />
+            </a>
+            <a href="https://linkedin.com" className="text-white hover:text-gray-300">
+              <FaLinkedin />
+            </a>
+            <a href="https://instagram.com" className="text-white hover:text-gray-300">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>
@@ -78,4 +100,3 @@ const Header = () => {
 };
 
 export default Header;
-
