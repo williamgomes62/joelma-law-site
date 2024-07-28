@@ -10,22 +10,41 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  // Define o horário de funcionamento
+  const operatingHours = {
+    domingo: false,
+    segunda: true,
+    terça: true,
+    quarta: true,
+    quinta: true,
+    sexta: true,
+    sábado: true,
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Verifica se o horário atual está dentro do horário de atendimento
+  const isOpenNow = () => {
+    const now = new Date();
+    const day = now.toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase();
+    const hour = now.getHours();
+    const isWeekend = day === 'domingo' || day === 'sábado';
+    const isWeekday = !isWeekend;
+
+    if (isWeekend && !operatingHours[day]) return false;
+    if (isWeekday && !operatingHours[day]) return false;
+
+    // Exemplo simplificado de horário de funcionamento: 07:30 - 18:00
+    return hour >= 7 && hour < 18;
+  };
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const getDayOfWeek = () => {
+    return new Date().toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase();
+  };
+
+  const currentDay = getDayOfWeek();
 
   return (
     <header className="fixed w-full top-0 z-50 transition-all duration-300">
@@ -130,19 +149,41 @@ const Header = () => {
           <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative">
             <FaTimes
               onClick={toggleModal}
-              className="absolute top-2 right-2 text-gray-800 cursor-pointer hover:text-gray-600"
+              className="absolute top-2 right-2 text-blue-600 cursor-pointer hover:text-blue-500"
               size={24}
             />
-            <h2 className="text-2xl font-semibold mb-4 text-black">Horário de Funcionamento</h2>
-            <ul className="text-lg text-gray-800">
-              <li className="mb-2"><strong>Domingo:</strong> Fechado</li>
-              <li className="mb-2"><strong>Segunda-feira:</strong> 07:30–18:00</li>
-              <li className="mb-2"><strong>Terça-feira:</strong> 07:30–18:00</li>
-              <li className="mb-2"><strong>Quarta-feira:</strong> 07:30–18:00</li>
-              <li className="mb-2"><strong>Quinta-feira:</strong> 07:30–18:00</li>
-              <li className="mb-2"><strong>Sexta-feira:</strong> 07:30–18:00</li>
-              <li className="mb-2"><strong>Sábado:</strong> 08:00–14:00</li>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">Horário de Funcionamento</h2>
+            <ul className="text-lg text-gray-900">
+              {Object.entries({
+                domingo: 'Fechado',
+                segunda: '07:30–18:00',
+                terça: '07:30–18:00',
+                quarta: '07:30–18:00',
+                quinta: '07:30–18:00',
+                sexta: '07:30–18:00',
+                sábado: '08:00–14:00'
+              }).map(([day, hours]) => (
+                <li
+                  key={day}
+                  className={`${day === currentDay ? 'bg-blue-100 text-blue-600' : ''} p-2 rounded`}
+                >
+                  <strong className="text-gray-700">{`${day.charAt(0).toUpperCase() + day.slice(1)}:`}</strong> {hours}
+                </li>
+              ))}
             </ul>
+            <div className="mt-4">
+              {isOpenNow() ? (
+                <p className="text-lg text-gray-900 mb-4">Estamos abertos, fale já conosco!</p>
+              ) : (
+                <p className="text-lg text-gray-900 mb-4">Estamos fechados, mas deixe sua mensagem que entraremos em contato o mais rápido possível.</p>
+              )}
+              <button
+                className={`w-full py-2 px-4 text-white rounded-lg ${isOpenNow() ? 'bg-blue-600 hover:bg-blue-500' : 'bg-gray-600 hover:bg-gray-500'}`}
+                onClick={() => window.location.href = 'mailto:contact@example.com'}
+              >
+                {isOpenNow() ? 'Enviar Mensagem' : 'Deixar Mensagem'}
+              </button>
+            </div>
           </div>
         </div>
       )}
