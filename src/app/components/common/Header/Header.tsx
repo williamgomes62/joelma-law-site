@@ -10,15 +10,15 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Define o horário de funcionamento
+  // Horários de funcionamento
   const operatingHours = {
-    domingo: false,
-    segunda: true,
-    terça: true,
-    quarta: true,
-    quinta: true,
-    sexta: true,
-    sábado: true,
+    domingo: { open: false },
+    segunda: { open: true, hours: '07:30–18:00' },
+    terça: { open: true, hours: '07:30–18:00' },
+    quarta: { open: true, hours: '07:30–18:00' },
+    quinta: { open: true, hours: '07:30–18:00' },
+    sexta: { open: true, hours: '07:30–18:00' },
+    sábado: { open: true, hours: '08:00–14:00' }
   };
 
   // Verifica se o horário atual está dentro do horário de atendimento
@@ -26,14 +26,18 @@ const Header = () => {
     const now = new Date();
     const day = now.toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase();
     const hour = now.getHours();
+    const minutes = now.getMinutes();
     const isWeekend = day === 'domingo' || day === 'sábado';
     const isWeekday = !isWeekend;
 
-    if (isWeekend && !operatingHours[day]) return false;
-    if (isWeekday && !operatingHours[day]) return false;
+    if (!operatingHours[day].open) return false;
 
-    // Exemplo simplificado de horário de funcionamento: 07:30 - 18:00
-    return hour >= 7 && hour < 18;
+    // Horário simplificado: 07:30 - 18:00 (para dias úteis), 08:00 - 14:00 (sábado)
+    const [startHour, startMinute] = operatingHours[day].hours.split('–')[0].split(':').map(Number);
+    const [endHour, endMinute] = operatingHours[day].hours.split('–')[1].split(':').map(Number);
+
+    return (hour > startHour || (hour === startHour && minutes >= startMinute)) &&
+           (hour < endHour || (hour === endHour && minutes <= endMinute));
   };
 
   const toggleModal = () => {
@@ -146,28 +150,21 @@ const Header = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative">
-            <FaTimes
+          <div className="bg-white p-6 rounded-lg w-11/12 md:w-1/2 relative">
+            <button
               onClick={toggleModal}
-              className="absolute top-2 right-2 text-blue-600 cursor-pointer hover:text-blue-500"
-              size={24}
-            />
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">Horário de Funcionamento</h2>
-            <ul className="text-lg text-gray-900">
-              {Object.entries({
-                domingo: 'Fechado',
-                segunda: '07:30–18:00',
-                terça: '07:30–18:00',
-                quarta: '07:30–18:00',
-                quinta: '07:30–18:00',
-                sexta: '07:30–18:00',
-                sábado: '08:00–14:00'
-              }).map(([day, hours]) => (
+              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+            >
+              <FaTimes className="w-6 h-6 bg-blue-600 text-white rounded-full p-1" />
+            </button>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Horário de Funcionamento</h2>
+            <ul className="list-none">
+              {Object.entries(operatingHours).map(([day, { open, hours }]) => (
                 <li
                   key={day}
-                  className={`${day === currentDay ? 'bg-blue-100 text-blue-600' : ''} p-2 rounded`}
+                  className={`${day === currentDay ? 'bg-blue-100 text-blue-600' : 'text-gray-700'} p-2 rounded`}
                 >
-                  <strong className="text-gray-700">{`${day.charAt(0).toUpperCase() + day.slice(1)}:`}</strong> {hours}
+                  <strong>{`${day.charAt(0).toUpperCase() + day.slice(1)}:`}</strong> {hours || (open ? 'Aberto' : 'Fechado')}
                 </li>
               ))}
             </ul>
