@@ -25,7 +25,7 @@ const Header = () => {
   // Define operating hours with the type
   const operatingHours: Record<DayOfWeek, { open: boolean; hours?: string }> = {
     'domingo': { open: false },
-    'segunda-feira': { open: true, hours: '07:30–19:00' },
+    'segunda-feira': { open: true, hours: '07:30–18:00' },
     'terça-feira': { open: true, hours: '07:30–18:00' },
     'quarta-feira': { open: true, hours: '07:30–18:00' },
     'quinta-feira': { open: true, hours: '07:30–18:00' },
