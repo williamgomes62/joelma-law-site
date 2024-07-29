@@ -6,7 +6,7 @@ import { Transition } from '@headlessui/react';
 import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaClock, FaTimes } from 'react-icons/fa';
 
 // Define the type for the days of the week
-type DayOfWeek = 'domingo' | 'segunda' | 'terça' | 'quarta' | 'quinta' | 'sexta' | 'sábado';
+type DayOfWeek = 'domingo' | 'segunda-feira' | 'terça-feira' | 'quarta-feira' | 'quinta-feira' | 'sexta-feira' | 'sábado';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,13 +24,13 @@ const Header = () => {
 
   // Define operating hours with the type
   const operatingHours: Record<DayOfWeek, { open: boolean; hours?: string }> = {
-    domingo: { open: false },
-    segunda: { open: true, hours: '07:30–18:00' },
-    terça: { open: true, hours: '07:30–18:00' },
-    quarta: { open: true, hours: '07:30–18:00' },
-    quinta: { open: true, hours: '07:30–18:00' },
-    sexta: { open: true, hours: '07:30–18:00' },
-    sábado: { open: true, hours: '08:00–14:00' }
+    'domingo': { open: false },
+    'segunda-feira': { open: true, hours: '07:30–19:00' },
+    'terça-feira': { open: true, hours: '07:30–18:00' },
+    'quarta-feira': { open: true, hours: '07:30–18:00' },
+    'quinta-feira': { open: true, hours: '07:30–18:00' },
+    'sexta-feira': { open: true, hours: '07:30–18:00' },
+    'sábado': { open: true, hours: '08:00–14:00' }
   };
 
   // Check if the current time is within operating hours
