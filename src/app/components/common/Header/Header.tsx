@@ -5,6 +5,9 @@ import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaClock, FaTimes } from 'react-icons/fa';
 
+// Define the type for the days of the week
+type DayOfWeek = 'domingo' | 'segunda' | 'terça' | 'quarta' | 'quinta' | 'sexta' | 'sábado';
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +22,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Horários de funcionamento
-  const operatingHours = {
+  // Define operating hours with the type
+  const operatingHours: Record<DayOfWeek, { open: boolean; hours?: string }> = {
     domingo: { open: false },
     segunda: { open: true, hours: '07:30–18:00' },
     terça: { open: true, hours: '07:30–18:00' },
@@ -30,20 +33,17 @@ const Header = () => {
     sábado: { open: true, hours: '08:00–14:00' }
   };
 
-  // Verifica se o horário atual está dentro do horário de atendimento
+  // Check if the current time is within operating hours
   const isOpenNow = () => {
     const now = new Date();
-    const day = now.toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase();
+    const day = now.toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase() as DayOfWeek;
     const hour = now.getHours();
     const minutes = now.getMinutes();
-    const isWeekend = day === 'domingo' || day === 'sábado';
-    const isWeekday = !isWeekend;
-
+    
     if (!operatingHours[day].open) return false;
 
-    // Horário simplificado: 07:30 - 18:00 (para dias úteis), 08:00 - 14:00 (sábado)
-    const [startHour, startMinute] = operatingHours[day].hours.split('–')[0].split(':').map(Number);
-    const [endHour, endMinute] = operatingHours[day].hours.split('–')[1].split(':').map(Number);
+    const [startHour, startMinute] = operatingHours[day].hours?.split('–')[0].split(':').map(Number) || [0, 0];
+    const [endHour, endMinute] = operatingHours[day].hours?.split('–')[1].split(':').map(Number) || [0, 0];
 
     return (hour > startHour || (hour === startHour && minutes >= startMinute)) &&
       (hour < endHour || (hour === endHour && minutes <= endMinute));
@@ -54,7 +54,7 @@ const Header = () => {
   };
 
   const getDayOfWeek = () => {
-    return new Date().toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase();
+    return new Date().toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase() as DayOfWeek;
   };
 
   const currentDay = getDayOfWeek();
