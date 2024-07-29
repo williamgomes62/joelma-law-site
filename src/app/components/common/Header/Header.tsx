@@ -46,7 +46,7 @@ const Header = () => {
     const [endHour, endMinute] = operatingHours[day].hours.split('–')[1].split(':').map(Number);
 
     return (hour > startHour || (hour === startHour && minutes >= startMinute)) &&
-           (hour < endHour || (hour === endHour && minutes <= endMinute));
+      (hour < endHour || (hour === endHour && minutes <= endMinute));
   };
 
   const toggleModal = () => {
@@ -59,9 +59,8 @@ const Header = () => {
 
   const currentDay = getDayOfWeek();
 
-  return (
-    <header className="fixed w-full top-0 z-50 transition-all duration-300">
-      {/* Top menu */}
+  const TopMenu = () => {
+    return (
       <div className="w-full bg-gray-800 text-white py-2">
         <div className="container mx-auto px-6 flex flex-wrap justify-between items-center">
           <div className="text-sm flex items-center space-x-4">
@@ -97,6 +96,13 @@ const Header = () => {
           </div>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <header className="fixed w-full top-0 z-50 transition-all duration-300">
+      {/* Top menu */}
+      <TopMenu />
       {/* Main menu */}
       <div className={`main-menu transition-all duration-300 ${isScrolled ? 'bg-white shadow-md scrolled' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">

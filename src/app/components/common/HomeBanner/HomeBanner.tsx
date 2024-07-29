@@ -9,17 +9,17 @@ export default function HomeBanner() {
         <img
           src='https://lh3.googleusercontent.com/proxy/iU2s7uDIh4FL-0Gc-qkHKfwqHTbAQskFW_vExOofEWtH94wR0gwn0dSlGyXCFKtHdU4T36PTuZRg06py_uNJljYVe2OgqpJc9Iv_aLsXSt7J-o_DJV-n1-cz'
         />
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 content">
+        <div className="mx-auto max-w-screen-xl sm:px-6 lg:px-8 content">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center py-16 col-span-2">
               <div className="animate__animated animate__fadeInLeft">
                 <div className="m-0 mb-4 w-fit p-3 px-6 border border-solid border-white rounded-xl">
-                  <h2 className="text-xl m-0 p-0 leading-tight">Advocacia Especializada</h2>
+                  <h2 className="text-sm sm:text-md md:text-lg lg:text-xl m-0 p-0 leading-tight">Advocacia Especializada</h2>
                 </div>
-                <h1 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">
+                <h1 className="text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Trabalho para defender seus Direitos
                 </h1>
-                <p className="text-lg text-white mb-6 text-left">
+                <p className="description text-lg text-white mb-6 text-left">
                   Sou advogada com mais de 10 anos de experiência, atuante em processos judiciais e extrajudiciais.
                   Atuante em Direito da Saúde, Violência Obstétrica,Erro Médico, em favor dos consumidores/Pacientes e Benefícios Assistenciais- BPC/LOAS.
                 </p>
