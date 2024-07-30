@@ -14,7 +14,7 @@ export default function HomeBanner() {
             <div className="text-center py-16 col-span-2">
               <div className="animate__animated animate__fadeInLeft">
                 <div className="m-0 mb-4 w-fit p-3 px-6 border border-solid border-white rounded-xl">
-                  <h2 className="text-sm sm:text-md md:text-lg lg:text-xl m-0 p-0 leading-tight">Advocacia Especializada</h2>
+                  <h2 className="text-sm sm:text-md md:text-lg lg:text-xl m-0 p-0 text-white leading-tight">Advocacia Especializada</h2>
                 </div>
                 <h1 className="text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   Trabalho para defender seus Direitos

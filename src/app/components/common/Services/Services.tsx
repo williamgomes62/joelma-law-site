@@ -1,12 +1,13 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import {
   FaBalanceScale,
   FaShieldAlt,
   FaUserShield,
   FaUsers,
   FaCheckCircle
-} from 'react-icons/fa'; // Exemplo de ícones, você pode escolher outros
+} from 'react-icons/fa';
 
 // Tipagem para o tipo de serviço
 interface Service {
@@ -92,38 +93,102 @@ const IconBox: React.FC<IconBoxProps> = ({ icon, title }) => (
   </div>
 );
 
-const ServiceInfoSection: React.FC = () => (
-  <div className="bg-gray-900 py-6">
-    <div className="container mx-auto px-6 text-white">
-      <div className="md:flex md:items-center md:justify-between">
-        <div className="mb-8 md:mb-0 md:w-1/3">
-          <h2 className="text-2xl md:text-3xl font-semibold">
-            Nosso serviço <span className="text-blue-500 font-bold">funciona assim:</span>
-          </h2>
+const ServiceInfoSection: React.FC = () => {
+  const controls = useAnimation();
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const iconVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.3,
+        duration: 0.5,
+      },
+    }),
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.2,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const iconData = [
+    { title: 'Receba seu benefício de onde estiver', icon: <FaCheckCircle /> },
+    { title: 'Atendimento humanizado e 100% Online', icon: <FaCheckCircle /> },
+    { title: 'Caso tenha direito, entramos com o seu Benefício', icon: <FaCheckCircle /> },
+  ];
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            controls.start('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, [controls]);
+
+  return (
+    <div ref={sectionRef} className="bg-gray-900 py-6">
+      <div className="container mx-auto px-6 text-white">
+        <div className="md:flex md:items-center md:justify-between">
+          <div className="mb-8 md:mb-0 md:w-1/3">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Nosso serviço <br /> <span className="text-blue-500 font-bold">funciona assim:</span>
+            </h2>
+          </div>
+          <div className="flex flex-col space-y-4 md:w-2/3">
+            {iconData.map((item, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                initial="hidden"
+                animate={controls}
+                variants={iconVariants}
+              >
+                <IconBox icon={item.icon} title={item.title} />
+              </motion.div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col space-y-4 md:w-2/3">
-          <IconBox
-            icon={<FaCheckCircle />}
-            title="Receba seu benefício de onde estiver"
-          />
-          <IconBox
-            icon={<FaCheckCircle />}
-            title="Atendimento humanizado e 100% Online"
-          />
-          <IconBox
-            icon={<FaCheckCircle />}
-            title="Caso tenha direito, entramos com o seu Benefício"
-          />
-        </div>
-      </div>
-      <div className="mt-8 flex justify-center">
-        <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
-          Fale com um advogado especialista
-        </button>
+        <motion.div
+          className="mt-8 flex justify-center"
+          initial="hidden"
+          animate={controls}
+          variants={buttonVariants}
+        >
+          <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+            Fale com um advogado especialista
+          </button>
+        </motion.div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Services: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -133,8 +198,8 @@ const Services: React.FC = () => {
     const cards = section?.querySelectorAll('.transform') || [];
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-fade-in-down');
             observer.unobserve(entry.target);
@@ -144,13 +209,13 @@ const Services: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
       observer.observe(card);
     });
 
     return () => {
       if (section) {
-        cards.forEach(card => {
+        cards.forEach((card) => {
           observer.unobserve(card);
         });
       }
