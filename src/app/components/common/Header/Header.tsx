@@ -65,32 +65,34 @@ const Header = () => {
         <div className="container mx-auto px-6 flex flex-wrap justify-between items-center">
           <div className="text-sm flex items-center space-x-4">
             <div className="flex items-center">
-              <FaEnvelope className="mr-1" />
-              <span className="hidden sm:inline">contact@example.com</span>
+              <FaEnvelope className="mr-2" />
+              <span className="hidden sm:inline">joelmalimadv@gmail.com</span>
             </div>
             <div className="flex items-center">
-              <FaPhoneAlt className="mr-1" />
+              <FaPhoneAlt className="mr-2" />
               <span className="hidden sm:inline">(31) 99579-2679</span>
             </div>
             <div className="flex items-center">
-              <FaClock className="mr-1 cursor-pointer" onClick={toggleModal} />
+              <FaClock className="mr-2 cursor-pointer" onClick={toggleModal} />
             </div>
             <div className="flex items-center">
-              <FaMapMarkerAlt className="mr-1" />
-              <span className="hidden sm:inline"><a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">123 Main St, City</a></span>
+            <a className="flex items-center" href="https://www.google.com/localservices/prolist?g2lbs=AOHF13kittLpUc3ea-mTLcYBx7H1IgnB9vFRmpMhOeGhs8T9sU1YPT022h_TXEZakihTG5bBfb-PgLLA5Pto5ZzHP2rKJiDI85JPkiZG5hS3rPYFtrqU8DI%3D&hl=pt-BR&gl=br&cs=1&ssta=1&oq=joelma%20lima%20advogada&src=2&lrlstt=1722392223378&q=Joelma%20Lima%20Advocacia&ved=2ahUKEwjc5K37ndCHAxVnF7kGHcGhC5IQjdcJegQIABAF&scp=CgtnY2lkOmxhd3llchIAGgAqCEFkdm9nYWRv&slp=MgBAAVIECAIgAIgBAA%3D%3D&spp=Cg0vZy8xMXYwbXE5dGd6OoABV2gwUUFCQUJFQUlpRldwdlpXeHRZU0JzYVcxaElHRmtkbTlqWVdOcFlhb0JQaEFCTWg4UUFTSWI0REVaQTg0VV9rQ0doQzFLSS1uYTR4YUN4LWhqN1QtMjN1U3JNaGtRQWlJVmFtOWxiRzFoSUd4cGJXRWdZV1IyYjJOaFkybGg%3D" target="_blank" rel="noopener noreferrer">
+              <FaMapMarkerAlt className="mr-2" />
+              <span className="hidden sm:inline">Av. N. Sra. do Carmo, 425, Mariana</span>
+            </a>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="https://facebook.com" className="text-white hover:text-gray-300">
+            <a href="https://www.facebook.com/joelimalimadv" className="text-white hover:text-gray-300">
               <FaFacebook />
             </a>
-            <a href="https://twitter.com" className="text-white hover:text-gray-300">
+            {/* <a href="https://twitter.com" className="text-white hover:text-gray-300">
               <FaTwitter />
-            </a>
-            <a href="https://linkedin.com" className="text-white hover:text-gray-300">
+            </a> */}
+            <a href="https://www.linkedin.com/in/joelma-lima-17a6a0262/" className="text-white hover:text-gray-300">
               <FaLinkedin />
             </a>
-            <a href="https://instagram.com" className="text-white hover:text-gray-300">
+            <a href="https://www.instagram.com/joelmalimadv/" className="text-white hover:text-gray-300">
               <FaInstagram />
             </a>
           </div>
@@ -104,21 +106,21 @@ const Header = () => {
       {/* Top menu */}
       <TopMenu />
       {/* Main menu */}
-      <div className={`main-menu transition-all duration-300 ${isScrolled ? 'bg-white shadow-md scrolled' : 'bg-transparent'}`}>
+      <div className={`main-menu transition-all duration-300 ${isScrolled || isOpen ? 'bg-white shadow-md scrolled' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className={`logo font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>
+          <div className={`logo font-bold text-xl transition-colors duration-300 ${isScrolled || isOpen ? 'text-black' : 'text-white'}`}>
             Logo
           </div>
           <div className="hidden md:flex space-x-6">
-            <a href="#home" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</a>
-            <a href="#about" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>About</a>
-            <a href="#services" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Services</a>
-            <a href="#contact" className={`transition-colors duration-300 ${isScrolled ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contact</a>
+            <a href="#home" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</a>
+            <a href="#about" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Sobre</a>
+            <a href="#services" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Serviços</a>
+            <a href="#contact" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contato</a>
           </div>
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`focus:outline-none relative w-8 h-8 transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}
+              className={`focus:outline-none relative w-8 h-8 transition-colors duration-300 ${isScrolled || isOpen ? 'text-black' : 'text-white'}`}
             >
               <span className={`block absolute h-0.5 w-8 bg-current transform transition duration-300 ease-in-out ${isOpen ? 'rotate-45 top-4' : 'top-2'}`}></span>
               <span className={`block absolute h-0.5 w-8 bg-current transform transition duration-300 ease-in-out ${isOpen ? 'opacity-0 translate-x-8' : 'opacity-100 top-4'}`}></span>
@@ -139,25 +141,9 @@ const Header = () => {
         <div className="md:hidden bg-white shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#home" className="block text-gray-800 hover:text-gray-600">Home</a>
-            <a href="#about" className="block text-gray-800 hover:text-gray-600">About</a>
-            <a href="#services" className="block text-gray-800 hover:text-gray-600">Services</a>
-            <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contact</a>
-          </div>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <a href="https://facebook.com" className="text-gray-800 hover:text-gray-600">
-                <FaFacebook />
-              </a>
-              <a href="https://twitter.com" className="text-gray-800 hover:text-gray-600">
-                <FaTwitter />
-              </a>
-              <a href="https://linkedin.com" className="text-gray-800 hover:text-gray-600">
-                <FaLinkedin />
-              </a>
-              <a href="https://instagram.com" className="text-gray-800 hover:text-gray-600">
-                <FaInstagram />
-              </a>
-            </div>
+            <a href="#about" className="block text-gray-800 hover:text-gray-600">Sobre</a>
+            <a href="#services" className="block text-gray-800 hover:text-gray-600">Serviços</a>
+            <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contato</a>
           </div>
         </div>
       </Transition>

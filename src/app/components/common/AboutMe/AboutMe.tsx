@@ -7,20 +7,20 @@ const AboutMe = () => {
     <section className="bg-gray-100 py-16 px-4 relative overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row">
         {/* Bloco de Texto */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-center md:text-left z-10">
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-left z-10">
           <h3 className="text-xl text-gray-500 mb-2">Bem-vindo ao meu perfil</h3>
           <h2 className="text-4xl font-bold text-blue-800 mb-6">Sobre Mim</h2>
           <div className="mb-8">
-            <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+            <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
               <strong className="text-blue-800">Prazer, sou [Nome do Advogado]</strong>. Sou um advogado apaixonado pelo que faço, especializado em direito previdenciário e assistencial. Com anos de experiência e um profundo entendimento das leis e regulamentos, estou comprometido em fornecer consultoria e representação jurídica de alta qualidade.
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+            <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
               Minha abordagem é baseada na empatia e no comprometimento com as necessidades dos meus clientes. Acredito que cada caso é único e merece atenção e estratégia personalizadas para alcançar o melhor resultado possível.
             </p>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
               Estou aqui para ajudar você a entender seus direitos e a navegar pelo complexo mundo jurídico com confiança. Entre em contato para uma consulta personalizada e descubra como posso ajudar a resolver suas questões jurídicas.
             </p>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-gray-700 leading-relaxed text-md md:text-lg">
               <strong className="text-blue-800">Minhas credenciais:</strong> Formado pela [Nome da Universidade], com especialização em direito previdenciário. Além disso, participei de diversos cursos e seminários para manter-me atualizado com as mudanças na legislação.
             </p>
           </div>
@@ -28,16 +28,16 @@ const AboutMe = () => {
           {/* Redes Sociais e Call to Action */}
           <div className="flex flex-col items-center md:items-start mb-6">
             <div className="flex space-x-4 mb-6">
-              <a href="#" className="text-blue-800 hover:text-blue-600">
+              <a href="https://www.facebook.com/joelimalimadv" className="text-blue-800 hover:text-blue-600">
                 <FaFacebook size={32} />
               </a>
-              <a href="#" className="text-blue-800 hover:text-blue-600">
+              {/* <a href="https://www.linkedin.com/in/joelma-lima-17a6a0262/" className="text-blue-800 hover:text-blue-600">
                 <FaTwitter size={32} />
-              </a>
+              </a> */}
               <a href="#" className="text-blue-800 hover:text-blue-600">
                 <FaLinkedin size={32} />
               </a>
-              <a href="#" className="text-blue-800 hover:text-blue-600">
+              <a href="https://www.instagram.com/joelmalimadv/" className="text-blue-800 hover:text-blue-600">
                 <FaInstagram size={32} />
               </a>
             </div>
