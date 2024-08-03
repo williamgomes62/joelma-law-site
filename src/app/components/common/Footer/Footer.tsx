@@ -1,48 +1,88 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
+  const controls = useAnimation();
+  const [ref, setRef] = useState(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start(i => ({
+            y: 0,
+            opacity: 1,
+            transition: { delay: i * 0.3, duration: 0.5 }
+          }));
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref) {
+      observer.observe(ref);
+    }
+
+    return () => {
+      if (ref) {
+        observer.unobserve(ref);
+      }
+    };
+  }, [ref, controls]);
+
   return (
-    <footer className="bg-gray-100 text-gray-800 py-10">
+    <footer ref={setRef} className="bg-gray-100 text-gray-800 py-10">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="footer-section">
-            <h3 className="text-lg font-semibold mb-4">Links Úteis</h3>
-            <ul>
-              <li className="mb-2"><a href="/" className="hover:text-blue-600">Home</a></li>
-              <li className="mb-2"><a href="/sobre" className="hover:text-blue-600">Sobre Mim</a></li>
-              <li className="mb-2"><a href="/servicos" className="hover:text-blue-600">Serviços</a></li>
-              <li className="mb-2"><a href="/depoimentos" className="hover:text-blue-600">Depoimentos</a></li>
-              <li className="mb-2"><a href="/blog" className="hover:text-blue-600">Blog</a></li>
-              <li className="mb-2"><a href="/contato" className="hover:text-blue-600">Contato</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3 className="text-lg font-semibold mb-4">Redes Sociais</h3>
-            <ul className="flex space-x-6">
-              <li>
-                <a href="https://www.linkedin.com/in/joelma-lima-17a6a0262/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-700">
-                  <i className="fab fa-linkedin fa-2x"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/joelimalimadv" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600">
-                  <i className="fab fa-facebook-f fa-2x"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/joelmalimadv/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600">
-                  <i className="fab fa-instagram fa-2x"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3 className="text-lg font-semibold mb-4">Contato</h3>
-            <p>Endereço: Av. Nossa Sra. do Carmo, 425 - Centro, Mariana - MG, 35420-000</p>
-            <p>Telefone: (31) 99579-2679</p>
-            <p>Email: joelmalimadv@gmail.com</p>
-          </div>
+          {['Links Úteis', 'Redes Sociais', 'Contato'].map((title, index) => (
+            <motion.div
+              key={index}
+              className="footer-section"
+              initial={{ y: -50, opacity: 0 }}
+              animate={controls}
+              custom={index}
+            >
+              <h3 className="text-lg font-semibold mb-4">{title}</h3>
+              {title === 'Links Úteis' && (
+                <ul>
+                  <li className="mb-2"><a href="/" className="hover:text-blue-600">Home</a></li>
+                  <li className="mb-2"><a href="/sobre" className="hover:text-blue-600">Sobre Mim</a></li>
+                  <li className="mb-2"><a href="/servicos" className="hover:text-blue-600">Serviços</a></li>
+                  <li className="mb-2"><a href="/depoimentos" className="hover:text-blue-600">Depoimentos</a></li>
+                  <li className="mb-2"><a href="/blog" className="hover:text-blue-600">Blog</a></li>
+                  <li className="mb-2"><a href="/contato" className="hover:text-blue-600">Contato</a></li>
+                </ul>
+              )}
+              {title === 'Redes Sociais' && (
+                <ul className="flex space-x-6">
+                  <li>
+                    <a href="https://www.linkedin.com/in/joelma-lima-17a6a0262/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-700">
+                      <i className="fab fa-linkedin fa-2x"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/joelimalimadv" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600">
+                      <i className="fab fa-facebook-f fa-2x"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/joelmalimadv/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600">
+                      <i className="fab fa-instagram fa-2x"></i>
+                    </a>
+                  </li>
+                </ul>
+              )}
+              {title === 'Contato' && (
+                <div>
+                  <p>Endereço: Av. Nossa Sra. do Carmo, 425 - Centro, Mariana - MG, 35420-000</p>
+                  <p>Telefone: (31) 99579-2679</p>
+                  <p>Email: joelmalimadv@gmail.com</p>
+                </div>
+              )}
+            </motion.div>
+          ))}
         </div>
         <div className="border-t border-gray-300 mt-8 pt-4 text-center">
           <p>&copy; 2024 Joelma Lima. Todos os direitos reservados.</p>
