@@ -153,8 +153,8 @@ const ServiceInfoSection: React.FC = () => {
   }, [controls]);
 
   return (
-    <div ref={sectionRef} className="bg-gray-900 py-6">
-      <div className="container mx-auto px-6 text-white">
+    <div ref={sectionRef} className="px-4 sm:px-6 lg:px-8 bg-gray-900 py-6">
+      <div className="container mx-auto text-white">
         <div className="md:flex md:items-center md:justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
             <h2 className="text-2xl md:text-3xl font-semibold">
@@ -223,12 +223,12 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="p-10 bg-gray-100">
+    <div ref={sectionRef} className="px-4 sm:px-6 lg:px-8 p-10 bg-gray-100">
       <div className="title-container mb-10">
         <p className="text-center text-2xl text-blue-600">SERVIÇOS</p>
         <h2 className="text-center text-4xl font-bold text-blue-600">Como podemos ajudar?</h2>
       </div>
-      <div className="flex flex-wrap gap-8 justify-center">
+      <div className="container mx-auto flex flex-wrap gap-8 justify-center">
         {services.map((service, index) => (
           <ServiceCard
             key={index}
