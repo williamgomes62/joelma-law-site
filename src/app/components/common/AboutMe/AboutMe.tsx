@@ -43,13 +43,13 @@ const AboutMe = () => {
   }, [ref, controlsText, controlsImage]);
 
   return (
-    <section ref={setRef} className="bg-gray-100 py-16 px-4 relative overflow-hidden">
+    <section ref={setRef} className="px-4 sm:px-6 lg:px-8 bg-gray-100 py-16 relative overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row">
         {/* Bloco de Texto */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={controlsText}
-          className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-left z-10"
+          className="w-full md:w-1/2 flex flex-col justify-center text-left z-10"
         >
           <h3 className="text-xl text-gray-500 mb-2">Bem-vindo ao meu perfil</h3>
           <h2 className="text-4xl font-bold text-blue-800 mb-6">Sobre Mim</h2>
