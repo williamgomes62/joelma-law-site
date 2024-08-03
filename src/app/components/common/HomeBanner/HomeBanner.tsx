@@ -4,14 +4,14 @@ import 'animate.css/animate.min.css';
 export default function HomeBanner() {
   return (
     <>
-      <div className="relative isolate px-6 pt-14 lg:px-8 bg-white banner">
+      <div className="relative isolate pt-14 px-4 sm:px-6 lg:px-8 bg-white banner">
         <div className="background-gradient"></div>
         <img
           src='https://lh3.googleusercontent.com/proxy/iU2s7uDIh4FL-0Gc-qkHKfwqHTbAQskFW_vExOofEWtH94wR0gwn0dSlGyXCFKtHdU4T36PTuZRg06py_uNJljYVe2OgqpJc9Iv_aLsXSt7J-o_DJV-n1-cz'
         />
-        <div className="mx-auto max-w-screen-xl sm:px-6 lg:px-8 content">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center py-16 col-span-2">
+        <div className="mx-auto container content">
+          <div className="">
+            <div className="banner-content text-center py-16">
               <div className="animate-slide-in-left">
                 <div className="m-0 mb-4 w-fit p-3 px-6 border border-solid border-white rounded-xl">
                   <h2 className="text-sm sm:text-md md:text-lg lg:text-xl m-0 p-0 text-white leading-tight">BPC/LOAS</h2>
