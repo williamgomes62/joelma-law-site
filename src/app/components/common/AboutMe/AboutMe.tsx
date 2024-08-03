@@ -1,11 +1,12 @@
-import React from 'react';
+'use client';
 import Image from 'next/image';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import './styles.css';
 
 const AboutMe = () => {
   return (
     <section className="bg-gray-100 py-16 px-4 relative overflow-hidden">
-      <div className="container mx-auto flex flex-col md:flex-row">
+      <div className="my-animate-slide-in-left container mx-auto flex flex-col md:flex-row">
         {/* Bloco de Texto */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-left z-10">
           <h3 className="text-xl text-gray-500 mb-2">Bem-vindo ao meu perfil</h3>
@@ -31,9 +32,6 @@ const AboutMe = () => {
               <a href="https://www.facebook.com/joelimalimadv" className="text-blue-800 hover:text-blue-600">
                 <FaFacebook size={32} />
               </a>
-              {/* <a href="https://www.linkedin.com/in/joelma-lima-17a6a0262/" className="text-blue-800 hover:text-blue-600">
-                <FaTwitter size={32} />
-              </a> */}
               <a href="#" className="text-blue-800 hover:text-blue-600">
                 <FaLinkedin size={32} />
               </a>
