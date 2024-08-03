@@ -8,9 +8,7 @@ import './styles.css';
 const AboutMe = () => {
   const controlsText = useAnimation();
   const controlsImage = useAnimation();
-  const [ref, setRef] = useState(null);
-
-  const onScreen = useRef();
+  const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,19 +29,19 @@ const AboutMe = () => {
       { threshold: 0.2 }
     );
 
-    if (ref) {
-      observer.observe(ref);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {
-      if (ref) {
-        observer.unobserve(ref);
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
     };
-  }, [ref, controlsText, controlsImage]);
+  }, [controlsText, controlsImage]);
 
   return (
-    <section ref={setRef} className="px-4 sm:px-6 lg:px-8 bg-gray-100 py-16 relative overflow-hidden">
+    <section ref={ref} className="px-4 sm:px-6 lg:px-8 bg-gray-100 py-16 relative overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row">
         {/* Bloco de Texto */}
         <motion.div
