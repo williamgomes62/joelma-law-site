@@ -61,8 +61,8 @@ const Header = () => {
 
   const TopMenu = () => {
     return (
-      <div className="w-full bg-gray-800 text-white py-2">
-        <div className="container mx-auto px-6 flex flex-wrap justify-between items-center">
+      <div className="w-full px-4 sm:px-6 lg:px-8 bg-gray-800 text-white py-2">
+        <div className="container mx-auto flex flex-wrap justify-between items-center">
           <div className="text-sm flex items-center space-x-4">
             <div className="flex items-center">
               <FaEnvelope className="mr-2" />
@@ -106,8 +106,8 @@ const Header = () => {
       {/* Top menu */}
       <TopMenu />
       {/* Main menu */}
-      <div className={`main-menu transition-all duration-300 ${isScrolled || isOpen ? 'bg-white shadow-md scrolled' : 'bg-transparent'}`}>
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className={`px-4 sm:px-6 lg:px-8 main-menu transition-all duration-300 ${isScrolled || isOpen ? 'bg-white shadow-md scrolled' : 'bg-transparent'}`}>
+        <div className="container mx-auto py-4 flex items-center justify-between">
           <div className={`logo font-bold text-xl transition-colors duration-300 ${isScrolled || isOpen ? 'text-black' : 'text-white'}`}>
             Logo
           </div>
