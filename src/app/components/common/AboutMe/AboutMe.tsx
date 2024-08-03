@@ -1,14 +1,56 @@
 'use client';
 import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './styles.css';
 
 const AboutMe = () => {
+  const controlsText = useAnimation();
+  const controlsImage = useAnimation();
+  const [ref, setRef] = useState(null);
+
+  const onScreen = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controlsText.start({
+            x: 0,
+            opacity: 1,
+            transition: { duration: 1 },
+          });
+          controlsImage.start({
+            x: 0,
+            opacity: 1,
+            transition: { duration: 1 },
+          });
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref) {
+      observer.observe(ref);
+    }
+
+    return () => {
+      if (ref) {
+        observer.unobserve(ref);
+      }
+    };
+  }, [ref, controlsText, controlsImage]);
+
   return (
-    <section className="bg-gray-100 py-16 px-4 relative overflow-hidden">
-      <div className="my-animate-slide-in-left container mx-auto flex flex-col md:flex-row">
+    <section ref={setRef} className="bg-gray-100 py-16 px-4 relative overflow-hidden">
+      <div className="container mx-auto flex flex-col md:flex-row">
         {/* Bloco de Texto */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-left z-10">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={controlsText}
+          className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-12 text-left z-10"
+        >
           <h3 className="text-xl text-gray-500 mb-2">Bem-vindo ao meu perfil</h3>
           <h2 className="text-4xl font-bold text-blue-800 mb-6">Sobre Mim</h2>
           <div className="mb-8">
@@ -43,10 +85,14 @@ const AboutMe = () => {
               Entre em Contato
             </button>
           </div>
-        </div>
+        </motion.div>
         
         {/* Imagem de Perfil com Gradiente Personalizado e Efeitos de Estilo */}
-        <div className="hidden md:block md:w-1/2 relative h-screen overflow-hidden">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={controlsImage}
+          className="hidden md:block md:w-1/2 relative h-screen overflow-hidden"
+        >
           <div className="absolute inset-0 rounded-r-lg">
             <Image
               src='/assets/images/about-me.jpeg'
@@ -57,7 +103,7 @@ const AboutMe = () => {
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_40%)]"></div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
