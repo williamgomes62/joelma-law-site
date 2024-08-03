@@ -1,11 +1,11 @@
 'use client';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
   const controls = useAnimation();
-  const [ref, setRef] = useState(null);
+  const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,20 +21,20 @@ const Footer = () => {
       { threshold: 0.2 }
     );
 
-    if (ref) {
-      observer.observe(ref);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {
-      if (ref) {
-        observer.unobserve(ref);
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
     };
-  }, [ref, controls]);
+  }, [controls]);
 
   return (
-    <footer ref={setRef} className="bg-gray-100 text-gray-800 py-10">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer ref={ref} className="px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800 py-10">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {['Links Úteis', 'Redes Sociais', 'Contato'].map((title, index) => (
             <motion.div
