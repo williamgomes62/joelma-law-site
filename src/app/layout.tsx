@@ -1,3 +1,6 @@
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -16,7 +19,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Script id="leadster-chatbot" strategy="beforeInteractive">
+          {`
+            (function(a,b,c,d){
+              try {
+                var e = b.head || b.getElementsByTagName("head")[0];
+                var f = b.createElement("script");
+                f.setAttribute("src", c);
+                f.setAttribute("charset", "UTF-8");
+                f.defer = true;
+                a.neuroleadId = d;
+                e.appendChild(f);
+              } catch (g) {}
+            })(window, document, "https://cdn.leadster.com.br/neurolead/neurolead.min.js", "sylKvctMZst73z3CtcVObgz5l");
+          `}
+        </Script>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
