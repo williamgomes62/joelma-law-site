@@ -1,4 +1,5 @@
 import AboutMe from "../components/common/AboutMe/AboutMe";
+import FaqSection from "../components/common/FaqSection/FaqSection";
 import Footer from "../components/common/Footer/Footer";
 import Header from "../components/common/Header/Header"
 import HomeBanner from "../components/common/HomeBanner/HomeBanner";
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <ServiceInfoSection />
       <AboutMe />
+      <FaqSection />
       <Footer />
     </div>
   );
