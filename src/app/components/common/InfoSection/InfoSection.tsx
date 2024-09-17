@@ -2,7 +2,21 @@
 
 import Image from 'next/image';
 
-export default function InfoSection({ title, content, imageUrl, imageAlt, reverse = false }) {
+interface InfoSectionProps {
+  title: string;
+  content: string[]; // Defina 'content' como um array de strings
+  imageUrl: string;
+  imageAlt: string;
+  reverse?: boolean;
+}
+
+export default function InfoSection({
+  title,
+  content,
+  imageUrl,
+  imageAlt,
+  reverse = false,
+}: InfoSectionProps) {
   return (
     <section className="py-12 px-6 bg-gray-100">
       <div className="container mx-auto max-w-4xl">

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
 const FaqSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -28,7 +28,7 @@ const FaqSection = () => {
     },
   ];
 
-  const toggleQuestion = (index) => {
+  const toggleQuestion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 

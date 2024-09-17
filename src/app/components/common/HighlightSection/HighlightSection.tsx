@@ -4,7 +4,13 @@ import { FaStethoscope, FaSyringe, FaHandHoldingHeart, FaBrain, FaBone } from 'r
 
 const iconStyles = "inline-block text-blue-600 mr-4";
 
-export default function HighlightSection({ diseases, buttonText, buttonLink }) {
+interface HighlightSectionProps {
+  diseases: string[]; // Supondo que 'diseases' seja um array de strings
+  buttonText: string; // 'buttonText' é uma string
+  buttonLink: string; // 'buttonLink' também é uma string
+}
+
+export default function HighlightSection({ diseases, buttonText, buttonLink }: HighlightSectionProps) {
   // Iconos para cada tipo de doença
   const icons = [
     <FaStethoscope className={iconStyles} key="1" />, // Exemplo de ícone
