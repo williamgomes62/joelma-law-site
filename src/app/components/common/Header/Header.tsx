@@ -4,6 +4,7 @@ import './Header.css';
 import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaClock, FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
 
 // Define the type for the days of the week
 type DayOfWeek = 'domingo' | 'segunda-feira' | 'terça-feira' | 'quarta-feira' | 'quinta-feira' | 'sexta-feira' | 'sábado';
@@ -112,8 +113,8 @@ const Header = () => {
             Logo
           </div>
           <div className="hidden md:flex space-x-6">
-            <a href="#home" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</a>
-            <a href="#about" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Sobre</a>
+            <Link href="/" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</Link>
+            <Link href="/bpc-loas" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>BPC/LOAS</Link>
             <a href="#services" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Serviços</a>
             <a href="#contact" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contato</a>
           </div>

@@ -1,10 +1,12 @@
 // import 'tailwindcss/tailwind.css';
-import Home from "./pages/Home";
+import BpcLoasPage from "./pages/bpc-loas";
+import Home from "./pages/home";
 
 export default function App() {
   return (
     <>
-      <Home />
+      {/* <Home /> */}
+      <BpcLoasPage />
     </>
   );
 }
