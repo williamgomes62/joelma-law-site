@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
@@ -76,9 +77,18 @@ const Footer = () => {
               )}
               {title === 'Contato' && (
                 <div>
-                  <p>Endereço: Av. Nossa Sra. do Carmo, 425 - Centro, Mariana - MG, 35420-000</p>
-                  <p>Telefone: (31) 99579-2679</p>
-                  <p>Email: joelmalimadv@gmail.com</p>
+                  <div className="flex items-center space-x-2">
+                    <FaMapMarkerAlt className="text-gray-800" />
+                    <p>Av. Nossa Sra. do Carmo, 425 - Centro, Mariana - MG, 35420-000</p>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FaPhone className="text-gray-800" />
+                    <p>(31) 99579-2679</p>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FaEnvelope className="text-gray-800" />
+                    <p>joelmalimadv@gmail.com</p>
+                  </div>
                 </div>
               )}
             </motion.div>

@@ -4,6 +4,7 @@ import Header from "../components/common/Header/Header";
 import HighlightSection from "../components/common/HighlightSection/HighlightSection";
 import InfoSection from "../components/common/InfoSection/InfoSection";
 import { FaInfoCircle, FaPhone, FaEnvelope } from 'react-icons/fa';
+import Stats from "../components/common/Stats/Stats";
 
 export default function BpcLoasPage() {
   const content = [
@@ -28,17 +29,62 @@ export default function BpcLoasPage() {
         content={content}
         imageUrl="/assets/images/bpc-LOAS.webp"
         imageAlt="Informações sobre BPC LOAS"
-        reverse={true}
+        reverse={true                                                                                                                                     }
       />
       <HighlightSection
         diseases={diseases}
-        buttonText="Saiba mais sobre o BPC/LOAS"
+        buttonText="Conversar com um advogado especialista em BPC/LOAS"
         buttonLink="/contato"
       />
+      <Stats
+        casesAttended={50}
+        statesServed={26}
+        yearsOfExperience={7}
+      />
+      {/* <section className="py-10 bg-white sm:py-16 lg:py-24">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">How does it work?</h2>
+            <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p>
+          </div>
+
+          <div className="relative mt-12 lg:mt-20">
+            <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
+              <img className="w-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg" alt="" />
+            </div>
+
+            <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
+              <div>
+                <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                  <span className="text-xl font-semibold text-gray-700"> 1 </span>
+                </div>
+                <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Create a free account</h3>
+                <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                  <span className="text-xl font-semibold text-gray-700"> 2 </span>
+                </div>
+                <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Build your website</h3>
+                <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                  <span className="text-xl font-semibold text-gray-700"> 3 </span>
+                </div>
+                <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Release & Launch</h3>
+                <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
 
       <div className="bg-gray-100 text-gray-900">
         {/* Hero Section */}
-        <section className="bg-[rgb(17,24,39)] text-white py-16 px-6 text-center">
+        {/* <section className="bg-[rgb(17,24,39)] text-white py-16 px-6 text-center">
           <div className="container mx-auto">
             <h1 className="text-4xl font-extrabold mb-4">Benefício de Prestação Continuada (BPC LOAS)</h1>
             <p className="text-lg mb-6">
@@ -48,10 +94,10 @@ export default function BpcLoasPage() {
               Saiba Mais
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* What is BPC LOAS */}
-        <section id="learn-more" className="py-12 px-6">
+        {/* <section id="learn-more" className="py-12 px-6">
           <div className="container mx-auto max-w-4xl">
             <div className="flex flex-col md:flex-row md:space-x-8">
               <div className="flex-1 mb-8 md:mb-0">
@@ -68,7 +114,7 @@ export default function BpcLoasPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Eligibility */}
         <section className="bg-[rgb(243,244,246)] py-12 px-6">
@@ -83,7 +129,7 @@ export default function BpcLoasPage() {
         </section>
 
         {/* How to Apply */}
-        <section className="py-12 px-6 bg-[rgb(250,204,21)]">
+        {/* <section className="py-12 px-6 bg-[rgb(250,204,21)]">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl font-semibold text-center mb-8 text-[rgb(17,24,39)]">Como Solicitar o BPC LOAS</h2>
             <p className="text-lg mb-6 text-[rgb(17,24,39)]">
@@ -98,10 +144,10 @@ export default function BpcLoasPage() {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 px-6">
+        {/* <section id="contact" className="py-12 px-6">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold mb-8 text-[rgb(17,24,39)]">Entre em Contato</h2>
             <p className="text-lg mb-6 text-[rgb(75,85,99)]">
@@ -118,7 +164,7 @@ export default function BpcLoasPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
       <Footer />
     </>
