@@ -1,4 +1,5 @@
 import AboutMe from "../components/common/AboutMe/AboutMe";
+import CustomerReviews from "../components/common/CustomerReviews/CustomerReviews";
 import FaqSection from "../components/common/FaqSection/FaqSection";
 import Footer from "../components/common/Footer/Footer";
 import Header from "../components/common/Header/Header"
@@ -18,6 +19,7 @@ export default function Home() {
       /> */}
       <Services />
       <ServiceInfoSection />
+      <CustomerReviews />
       <AboutMe />
       <FaqSection />
       <Footer />
