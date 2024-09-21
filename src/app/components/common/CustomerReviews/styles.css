@@ -7,3 +7,16 @@
 .slick-prev:hover:before, .slick-next:hover:before {
   color: #111827; /* Cor ainda mais escura ao passar o mouse */
 }
+
+.slick-slider {
+  display: flex;
+  align-items: center;
+}
+
+.slick-prev {
+  margin-right: 6px;
+}
+
+.slick-prev, .slick-next {
+  position: static;
+}

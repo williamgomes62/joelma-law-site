@@ -25,7 +25,6 @@ const reviews = [
     location: "Curitiba, PR",
     rating: 5,
   },
-  // Adicione mais avaliações conforme necessário
 ];
 
 const CustomerReviews = () => {
@@ -36,17 +35,19 @@ const CustomerReviews = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <div className="slick-arrow slick-next" />, // Mantém as setas padrão
-    prevArrow: <div className="slick-arrow slick-prev" />, // Mantém as setas padrão
+    autoplay: true,           // Habilita o autoplay
+    autoplaySpeed: 5000,     // Define o intervalo em milissegundos
+    nextArrow: <div className="slick-arrow slick-next" />,
+    prevArrow: <div className="slick-arrow slick-prev" />,
     responsive: [
       {
-        breakpoint: 1024, // tablet e desktop
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 640, // mobile
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
         },
@@ -58,7 +59,7 @@ const CustomerReviews = () => {
     <section className="py-12 bg-gray-50 sm:py-16 lg:py-20 relative">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-lg font-medium text-gray-600 font-pj">2,157 pessoas já deram feedback positivo</p>
+          <p className="text-lg font-medium text-gray-600 font-pj">Inúmeras pessoas já deram feedback positivo</p>
           <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">O que nossos clientes dizem</h2>
         </div>
 
