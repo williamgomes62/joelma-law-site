@@ -1,0 +1,9 @@
+/* Estilizando as setas do slick-carousel */
+.slick-prev:before, .slick-next:before {
+  color: #1f2937; /* Cor escura para contraste com o fundo claro */
+  font-size: 28px;
+}
+
+.slick-prev:hover:before, .slick-next:hover:before {
+  color: #111827; /* Cor ainda mais escura ao passar o mouse */
+}
