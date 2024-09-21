@@ -76,7 +76,7 @@ const CustomerReviews = () => {
                 <div key={index} className="px-4">
                   <div className="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col justify-between">
                     <p className="text-lg italic text-gray-700 mb-4">
-                      "{review.feedback}"
+                    &quot;{review.feedback}&quot;
                     </p>
                     <div className="flex justify-between items-center">
                       <div>
