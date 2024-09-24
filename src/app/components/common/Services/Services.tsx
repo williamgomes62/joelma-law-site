@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaCheckCircle
 } from 'react-icons/fa';
+import './styles.css';
 
 // Tipagem para o tipo de serviço
 interface Service {
@@ -51,22 +52,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
   <div
     className="
       relative bg-white rounded-lg shadow-lg p-6
-      text-center border-t-8 border-blue-600 transform
+      text-center border-t-4 border-blue-600 transform
       transition-all duration-500 opacity-0 translate-y-[-10px]
       group hover:translate-y-0 hover:shadow-2xl hover:border-green-500
       hover:scale-105 w-full sm:w-64 mt-6 mb-4">
     <div className="flex justify-center">
       <div className="absolute top-[-32px] bg-white p-2 rounded-full border border-blue-600 transition-colors duration-500 group-hover:border-green-500">
-        <div className="text-blue-600 group-hover:text-green-500 transition-colors duration-500">
+        <div className="card-icon text-blue-600 group-hover:text-green-500 transition-colors duration-500">
           {icon}
         </div>
       </div>
     </div>
-    <div className="mt-6">
-      <h3 className="text-blue-600 text-2xl font-semibold text-center mb-2">
+    <div className="mt-0 sm:mt-2 md:mt-4">
+      <h3 className="text-blue-600 text-xl sm:text-2xl font-semibold text-center mb-2">
         {title}
       </h3>
-      <p className="text-gray-600 mb-4">{description}</p>
+      <p className="text-gray-600 text-sm sm:text-base mb-4">{description}</p>
     </div>
     <div className="absolute inset-x-0 bottom-[-20px] flex justify-center">
       <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
@@ -223,10 +224,10 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="px-4 sm:px-6 lg:px-8 p-10 bg-gray-100">
-      <div className="title-container mb-10">
-        <p className="text-center text-2xl text-blue-600">SERVIÇOS</p>
-        <h2 className="text-center text-4xl font-bold text-blue-600">Como podemos ajudar?</h2>
+    <div ref={sectionRef} className="px-4 sm:px-6 lg:px-8 p-6 bg-gray-100">
+      <div className="title-container mb-6 md:mb-10">
+        <p className="text-center text-xl md:text-2xl text-blue-600">SERVIÇOS</p>
+        <h2 className="text-center text-2xl md:text-4xl font-bold text-blue-600">Como podemos ajudar?</h2>
       </div>
       <div className="container mx-auto flex flex-wrap gap-8 justify-center">
         {services.map((service, index) => (
