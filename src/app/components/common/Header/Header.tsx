@@ -115,8 +115,8 @@ const Header = () => {
           <div className="hidden md:flex space-x-6">
             <Link href="/" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</Link>
             <Link href="/bpc-loas" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>BPC/LOAS</Link>
-            <a href="#services" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Serviços</a>
-            <a href="#contact" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contato</a>
+            {/* <a href="#services" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Serviços</a>
+            <a href="#contact" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contato</a> */}
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -141,10 +141,12 @@ const Header = () => {
       >
         <div className="md:hidden bg-white shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#home" className="block text-gray-800 hover:text-gray-600">Home</a>
-            <a href="#about" className="block text-gray-800 hover:text-gray-600">Sobre</a>
+            <a href="/" className="block text-gray-800 hover:text-gray-600">Home</a>
+            <a href="/bpc-loas" className="block text-gray-800 hover:text-gray-600"> BPC/LOAS</a>
+            
+            {/* <a href="#about" className="block text-gray-800 hover:text-gray-600">Sobre</a>
             <a href="#services" className="block text-gray-800 hover:text-gray-600">Serviços</a>
-            <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contato</a>
+            <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contato</a> */}
           </div>
         </div>
       </Transition>
