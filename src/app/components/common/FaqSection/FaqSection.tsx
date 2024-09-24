@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import './styles.css';
 
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -33,12 +34,12 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-12 px-6">
+    <div className="faq bg-gradient-to-b from-gray-900 to-gray-800 text-white py-8 md:py-10 px-6">
       <div className="container mx-auto max-w-3xl">
-        <h2 className="text-3xl font-extrabold text-center text-white mb-10">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-center text-white mb-8">
           Perguntas Frequentes
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -47,12 +48,12 @@ const FaqSection = () => {
               }`}
             >
               <div
-                className={`flex justify-between items-center p-5 cursor-pointer transition-colors duration-300 ${
+                className={`flex justify-between items-center p-3 cursor-pointer transition-colors duration-300 ${
                   activeIndex === index ? 'bg-gray-600 text-blue-400' : 'hover:bg-gray-600'
                 }`}
                 onClick={() => toggleQuestion(index)}
               >
-                <h3 className={`text-lg font-medium ${activeIndex === index ? 'text-blue-400' : 'text-white'}`}>
+                <h3 className={`text-md font-medium ${activeIndex === index ? 'text-blue-400' : 'text-white'}`}>
                   {faq.question}
                 </h3>
                 <div
@@ -69,7 +70,7 @@ const FaqSection = () => {
                 }`}
                 style={{ transitionProperty: 'max-height, padding' }}
               >
-                <p className="text-sm text-gray-300">{faq.answer}</p>
+                <p className="answer text-sm md:text-md text-gray-300">{faq.answer}</p>
               </div>
             </div>
           ))}

@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer ref={ref} className="px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800 py-10">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {['Links Úteis', 'Redes Sociais', 'Contato'].map((title, index) => (
             <motion.div
               key={index}
@@ -48,12 +48,10 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">{title}</h3>
               {title === 'Links Úteis' && (
                 <ul>
-                  <li className="mb-2"><a href="/" className="hover:text-blue-600">Home</a></li>
-                  <li className="mb-2"><a href="/sobre" className="hover:text-blue-600">Sobre Mim</a></li>
-                  <li className="mb-2"><a href="/servicos" className="hover:text-blue-600">Serviços</a></li>
-                  <li className="mb-2"><a href="/depoimentos" className="hover:text-blue-600">Depoimentos</a></li>
-                  <li className="mb-2"><a href="/blog" className="hover:text-blue-600">Blog</a></li>
-                  <li className="mb-2"><a href="/contato" className="hover:text-blue-600">Contato</a></li>
+                  <li className="mb-2"><a href="#home-banner" className="hover:text-blue-600">Home</a></li>
+                  <li className="mb-2"><a href="#about" className="hover:text-blue-600">Sobre Mim</a></li>
+                  <li className="mb-2"><a href="#services" className="hover:text-blue-600">Serviços</a></li>
+                  <li className="mb-2"><a href="#reviews" className="hover:text-blue-600">Depoimentos</a></li>
                 </ul>
               )}
               {title === 'Redes Sociais' && (

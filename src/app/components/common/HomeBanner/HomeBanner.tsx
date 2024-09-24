@@ -1,10 +1,11 @@
 import './styles.css';
 import 'animate.css/animate.min.css';
+import whatsAppLink from '@/app/utils/whatsapp-link';
 
 export default function HomeBanner() {
   return (
     <>
-      <div className="relative isolate pt-14 px-4 sm:px-6 lg:px-8 bg-white banner">
+      <div id="home-banner" className="relative isolate pt-14 px-4 sm:px-6 lg:px-8 bg-white banner">
         <div className="background-gradient"></div>
         <img
           src='https://lh3.googleusercontent.com/proxy/iU2s7uDIh4FL-0Gc-qkHKfwqHTbAQskFW_vExOofEWtH94wR0gwn0dSlGyXCFKtHdU4T36PTuZRg06py_uNJljYVe2OgqpJc9Iv_aLsXSt7J-o_DJV-n1-cz'
@@ -26,7 +27,7 @@ export default function HomeBanner() {
                   </span>
                 </p>
                 <div className="cta-container rounded-3xl flex flex-col sm:flex-row justify-start items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                  <a href="#" className="cta-button inline-block px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-3xl hover:bg-blue-700 transition duration-300">
+                  <a href={whatsAppLink} className="cta-button inline-block px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-3xl hover:bg-blue-700 transition duration-300">
                     ENTRAR EM CONTATO
                   </a>
                   <span className="text-center sm:text-left">

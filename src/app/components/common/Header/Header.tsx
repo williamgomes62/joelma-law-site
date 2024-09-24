@@ -40,7 +40,7 @@ const Header = () => {
     const day = now.toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase() as DayOfWeek;
     const hour = now.getHours();
     const minutes = now.getMinutes();
-    
+
     if (!operatingHours[day].open) return false;
 
     const [startHour, startMinute] = operatingHours[day].hours?.split('–')[0].split(':').map(Number) || [0, 0];
@@ -77,10 +77,10 @@ const Header = () => {
               <FaClock className="mr-2 cursor-pointer" onClick={toggleModal} />
             </div>
             <div className="flex items-center">
-            <a className="flex items-center" href="https://www.google.com/localservices/prolist?g2lbs=AOHF13kittLpUc3ea-mTLcYBx7H1IgnB9vFRmpMhOeGhs8T9sU1YPT022h_TXEZakihTG5bBfb-PgLLA5Pto5ZzHP2rKJiDI85JPkiZG5hS3rPYFtrqU8DI%3D&hl=pt-BR&gl=br&cs=1&ssta=1&oq=joelma%20lima%20advogada&src=2&lrlstt=1722392223378&q=Joelma%20Lima%20Advocacia&ved=2ahUKEwjc5K37ndCHAxVnF7kGHcGhC5IQjdcJegQIABAF&scp=CgtnY2lkOmxhd3llchIAGgAqCEFkdm9nYWRv&slp=MgBAAVIECAIgAIgBAA%3D%3D&spp=Cg0vZy8xMXYwbXE5dGd6OoABV2gwUUFCQUJFQUlpRldwdlpXeHRZU0JzYVcxaElHRmtkbTlqWVdOcFlhb0JQaEFCTWg4UUFTSWI0REVaQTg0VV9rQ0doQzFLSS1uYTR4YUN4LWhqN1QtMjN1U3JNaGtRQWlJVmFtOWxiRzFoSUd4cGJXRWdZV1IyYjJOaFkybGg%3D" target="_blank" rel="noopener noreferrer">
-              <FaMapMarkerAlt className="mr-2" />
-              <span className="hidden sm:inline">Av. N. Sra. do Carmo, 425, Mariana</span>
-            </a>
+              <a className="flex items-center" href="https://www.google.com/localservices/prolist?g2lbs=AOHF13kittLpUc3ea-mTLcYBx7H1IgnB9vFRmpMhOeGhs8T9sU1YPT022h_TXEZakihTG5bBfb-PgLLA5Pto5ZzHP2rKJiDI85JPkiZG5hS3rPYFtrqU8DI%3D&hl=pt-BR&gl=br&cs=1&ssta=1&oq=joelma%20lima%20advogada&src=2&lrlstt=1722392223378&q=Joelma%20Lima%20Advocacia&ved=2ahUKEwjc5K37ndCHAxVnF7kGHcGhC5IQjdcJegQIABAF&scp=CgtnY2lkOmxhd3llchIAGgAqCEFkdm9nYWRv&slp=MgBAAVIECAIgAIgBAA%3D%3D&spp=Cg0vZy8xMXYwbXE5dGd6OoABV2gwUUFCQUJFQUlpRldwdlpXeHRZU0JzYVcxaElHRmtkbTlqWVdOcFlhb0JQaEFCTWg4UUFTSWI0REVaQTg0VV9rQ0doQzFLSS1uYTR4YUN4LWhqN1QtMjN1U3JNaGtRQWlJVmFtOWxiRzFoSUd4cGJXRWdZV1IyYjJOaFkybGg%3D" target="_blank" rel="noopener noreferrer">
+                <FaMapMarkerAlt className="mr-2" />
+                <span className="hidden sm:inline">Av. N. Sra. do Carmo, 425, Mariana</span>
+              </a>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -115,8 +115,9 @@ const Header = () => {
           <div className="hidden md:flex space-x-6">
             <Link href="/" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Home</Link>
             <Link href="/bpc-loas" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>BPC/LOAS</Link>
-            {/* <a href="#services" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Serviços</a>
-            <a href="#contact" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Contato</a> */}
+            <a href="/#about" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Sobre Mim</a>
+            <a href="/#services" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Serviços</a>
+            <a href="/#reviews" className={`transition-colors duration-300 ${isScrolled || isOpen ? 'text-black hover:text-gray-700' : 'text-white hover:text-gray-300'}`}>Depoimentos</a>
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -142,11 +143,10 @@ const Header = () => {
         <div className="md:hidden bg-white shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/" className="block text-gray-800 hover:text-gray-600">Home</a>
-            <a href="/bpc-loas" className="block text-gray-800 hover:text-gray-600"> BPC/LOAS</a>
-            
-            {/* <a href="#about" className="block text-gray-800 hover:text-gray-600">Sobre</a>
+            <a href="/bpc-loas" className="block text-gray-800 hover:text-gray-600">BPC/LOAS</a>
+            <a href="#about" className="block text-gray-800 hover:text-gray-600">Sobre Mim</a>
             <a href="#services" className="block text-gray-800 hover:text-gray-600">Serviços</a>
-            <a href="#contact" className="block text-gray-800 hover:text-gray-600">Contato</a> */}
+            <a href="#reviews" className="block text-gray-800 hover:text-gray-600">Depoimentos</a>
           </div>
         </div>
       </Transition>

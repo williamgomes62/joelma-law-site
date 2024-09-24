@@ -9,6 +9,7 @@ import {
   FaCheckCircle
 } from 'react-icons/fa';
 import './styles.css';
+import whatsAppLink from '@/app/utils/whatsapp-link';
 
 // Tipagem para o tipo de serviço
 interface Service {
@@ -64,15 +65,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
       </div>
     </div>
     <div className="mt-0 sm:mt-2 md:mt-4">
-      <h3 className="text-blue-600 text-xl sm:text-2xl font-semibold text-center mb-2">
+      <h3 className="text-blue-600 text-xl sm:text-xl md:text-2xl font-semibold text-center mb-2">
         {title}
       </h3>
-      <p className="text-gray-600 text-sm sm:text-base mb-4">{description}</p>
+      <p className="text-gray-600 text-md mb-4">{description}</p>
     </div>
     <div className="absolute inset-x-0 bottom-[-20px] flex justify-center">
-      <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
-        Saiba Mais
-      </button>
+      <a href={whatsAppLink} rel="noopener noreferrer">
+        <button className="bg-gradient-to-r from-green-400 to-green-600 text-white py-2 px-4 rounded-full transform transition-transform duration-500 hover:scale-110 hover:from-green-500 hover:to-green-700 hover:brightness-110 hover:shadow-lg">
+          Saiba Mais
+        </button>
+      </a>
     </div>
   </div>
 );
@@ -84,12 +87,12 @@ interface IconBoxProps {
 }
 
 const IconBox: React.FC<IconBoxProps> = ({ icon, title }) => (
-  <div className="flex items-center p-4 bg-gray-800 shadow-lg rounded-lg">
-    <div className="text-blue-500 text-4xl mr-4">
+  <div className="flex items-center p-2 md:p-4 bg-gray-800 shadow-lg rounded-lg">
+    <div className="icon text-blue-500 text-4xl mr-4">
       {icon}
     </div>
     <div>
-      <h3 className="text-lg font-medium text-white">{title}</h3>
+      <h3 className="text-md md:text-lg font-medium text-white">{title}</h3>
     </div>
   </div>
 );
@@ -154,11 +157,11 @@ const ServiceInfoSection: React.FC = () => {
   }, [controls]);
 
   return (
-    <div ref={sectionRef} className="px-4 sm:px-6 lg:px-8 bg-gray-900 py-6">
+    <div ref={sectionRef} className="services-info-section px-4 sm:px-6 lg:px-8 bg-gray-900 py-6 md:py-8">
       <div className="container mx-auto text-white">
         <div className="md:flex md:items-center md:justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
-            <h2 className="text-2xl md:text-3xl font-semibold">
+            <h2 className="title text-2xl md:text-3xl font-semibold">
               Nosso serviço <br /> <span className="text-blue-500 font-bold">funciona assim:</span>
             </h2>
           </div>
@@ -182,9 +185,11 @@ const ServiceInfoSection: React.FC = () => {
           animate={controls}
           variants={buttonVariants}
         >
-          <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
-            Fale com um advogado especialista
-          </button>
+          <a href={whatsAppLink} rel="noopener noreferrer">
+            <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+              Fale com um advogado especialista
+            </button>
+          </a>
         </motion.div>
       </div>
     </div>
@@ -224,7 +229,7 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="px-4 sm:px-6 lg:px-8 p-6 bg-gray-100">
+    <div id="services" ref={sectionRef} className="px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-7 md:pb-9 bg-gray-100">
       <div className="title-container mb-6 md:mb-10">
         <p className="text-center text-xl md:text-2xl text-blue-600">SERVIÇOS</p>
         <h2 className="text-center text-2xl md:text-4xl font-bold text-blue-600">Como podemos ajudar?</h2>
