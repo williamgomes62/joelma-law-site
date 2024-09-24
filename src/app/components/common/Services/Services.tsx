@@ -157,7 +157,7 @@ const ServiceInfoSection: React.FC = () => {
   }, [controls]);
 
   return (
-    <div ref={sectionRef} className="services-info-section px-4 sm:px-6 lg:px-8 bg-gray-900 py-6 md:py-8">
+    <div ref={sectionRef} className="services-info-section px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800 py-6 md:py-8">
       <div className="container mx-auto text-white">
         <div className="md:flex md:items-center md:justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
@@ -231,7 +231,7 @@ const Services: React.FC = () => {
   return (
     <div id="services" ref={sectionRef} className="px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 pb-7 md:pb-9 bg-gray-100">
       <div className="title-container mb-6 md:mb-10">
-        <p className="text-center text-xl md:text-2xl text-blue-600">SERVIÇOS</p>
+        <p className="text-center text-xl md:text-2xl text-gray-500">SERVIÇOS</p>
         <h2 className="text-center text-2xl md:text-4xl font-bold text-blue-600">Como podemos ajudar?</h2>
       </div>
       <div className="container mx-auto flex flex-wrap gap-8 justify-center">

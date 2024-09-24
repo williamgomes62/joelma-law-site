@@ -1,0 +1,5 @@
+@media (max-width: 767px) {
+  .info-section .flex-container {
+    flex-direction: column-reverse;
+  }
+}

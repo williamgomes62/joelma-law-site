@@ -142,11 +142,11 @@ const Header = () => {
       >
         <div className="md:hidden bg-white shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" className="block text-gray-800 hover:text-gray-600">Home</a>
-            <a href="/bpc-loas" className="block text-gray-800 hover:text-gray-600">BPC/LOAS</a>
-            <a href="#about" className="block text-gray-800 hover:text-gray-600">Sobre Mim</a>
-            <a href="#services" className="block text-gray-800 hover:text-gray-600">Serviços</a>
-            <a href="#reviews" className="block text-gray-800 hover:text-gray-600">Depoimentos</a>
+            <a href="/" onClick={() => setIsOpen(false)} className="block text-gray-800 hover:text-gray-600">Home</a>
+            <a href="/bpc-loas" onClick={() => setIsOpen(false)} className="block text-gray-800 hover:text-gray-600">BPC/LOAS</a>
+            <a href="/#about" onClick={() => setIsOpen(false)} className="block text-gray-800 hover:text-gray-600">Sobre Mim</a>
+            <a href="/#services" onClick={() => setIsOpen(false)} className="block text-gray-800 hover:text-gray-600">Serviços</a>
+            <a href="/#reviews" onClick={() => setIsOpen(false)} className="block text-gray-800 hover:text-gray-600">Depoimentos</a>
           </div>
         </div>
       </Transition>

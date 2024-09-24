@@ -59,8 +59,8 @@ const CustomerReviews = () => {
     <section id="reviews" className="pt-8 md:pt-10 pb-12 md:pb-14 bg-gray-50 relative">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-lg font-medium text-gray-600 font-pj">Inúmeras pessoas já deram feedback positivo</p>
-          <h2 className="mt-4 font-bold text-gray-900 text-2xl md:text-4xl font-pj">O que nossos clientes dizem</h2>
+          <p className="text-lg font-medium text-gray-500 font-pj">Inúmeras pessoas já deram feedback positivo</p>
+          <h2 className="mt-4 font-bold text-blue-600 text-2xl md:text-4xl font-pj">O que nossos clientes dizem</h2>
         </div>
 
         {/* Efeito de fundo com gradiente e blur */}

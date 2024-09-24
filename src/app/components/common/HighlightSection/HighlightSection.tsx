@@ -21,13 +21,13 @@ export default function HighlightSection({ diseases, buttonText, buttonLink }: H
   ];
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-b from-gray-100 to-gray-300">
+    <section className="pb-10 pt-4 md:pt-6 px-4 bg-gradient-to-b from-gray-100 to-gray-300">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl font-semibold mb-6 text-gray-900 text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900 text-center">
           Doenças que Garantem o Direito ao BPC/LOAS
         </h2>
-        <div className="bg-white p-8 rounded-lg shadow-xl">
-          <p className="text-lg text-gray-700 mb-6 text-center">
+        <div className="bg-white p-4 md:p-6 rounded-lg shadow-xl">
+          <p className="text-md md:text-lg text-gray-700 mb-6 text-center">
             Se você ou alguém que conhece possui uma das doenças listadas abaixo, pode ter direito ao 
             Benefício de Prestação Continuada (BPC/LOAS). Mesmo que sua condição não esteja nesta lista, entre 
             em contato para verificar o seu caso.
@@ -35,7 +35,7 @@ export default function HighlightSection({ diseases, buttonText, buttonLink }: H
           {/* Lista de doenças dividida em duas colunas */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 mb-6 max-w-full">
             {diseases.map((disease, index) => (
-              <div key={index} className="flex items-center text-lg text-gray-800">
+              <div key={index} className="flex items-center text-md md:text-lg text-gray-800">
                 {icons[index % icons.length]} {/* Rotação de ícones */}
                 <span>{disease}</span>
               </div>
