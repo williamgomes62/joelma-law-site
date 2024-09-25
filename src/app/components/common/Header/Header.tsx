@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaEnvelope, FaPhoneAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaClock, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
+import whatsAppLink from '@/app/utils/whatsapp-link';
 
 // Define the type for the days of the week
 type DayOfWeek = 'domingo' | 'segunda-feira' | 'terça-feira' | 'quarta-feira' | 'quinta-feira' | 'sexta-feira' | 'sábado';
@@ -163,19 +164,19 @@ const Header = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg w-11/12 md:w-1/2 relative">
+          <div className="opening-hours bg-white mb-8 p-4 rounded-lg w-10/12 md:w-1/2 relative">
             <button
               onClick={toggleModal}
               className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
             >
-              <FaTimes className="w-6 h-6 bg-blue-600 text-white rounded-full p-1" />
+              <FaTimes className="w-6 h-6 bg-gray-600 text-white rounded-full p-1" />
             </button>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Horário de Funcionamento</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-gray-700 mb-4">Horário de Funcionamento</h2>
             <ul className="list-none">
               {Object.entries(operatingHours).map(([day, { open, hours }]) => (
                 <li
                   key={day}
-                  className={`${day === currentDay ? 'bg-blue-100 text-blue-600' : 'text-gray-700'} p-2 rounded`}
+                  className={`${day === currentDay ? 'bg-blue-100 text-blue-600' : 'text-gray-700'} p-1 md:p-2 rounded`}
                 >
                   <strong>{`${day.charAt(0).toUpperCase() + day.slice(1)}:`}</strong> {hours || (open ? 'Aberto' : 'Fechado')}
                 </li>
@@ -183,13 +184,13 @@ const Header = () => {
             </ul>
             <div className="mt-4">
               {isOpenNow() ? (
-                <p className="text-lg text-gray-900 mb-4">Estamos abertos, fale já conosco!</p>
+                <p className="text-md md:text-lg text-gray-900 mb-4">Estamos abertos, fale já conosco!</p>
               ) : (
-                <p className="text-lg text-gray-900 mb-4">Estamos fechados, mas deixe sua mensagem que entraremos em contato o mais rápido possível.</p>
+                <p className="text-md md:text-lg text-gray-900 mb-4">Estamos fechados, mas deixe sua mensagem que entraremos em contato o mais rápido possível.</p>
               )}
               <button
                 className={`w-full py-2 px-4 text-white rounded-lg ${isOpenNow() ? 'bg-blue-600 hover:bg-blue-500' : 'bg-gray-600 hover:bg-gray-500'}`}
-                onClick={() => window.location.href = 'mailto:contact@example.com'}
+                onClick={() => window.location.href = whatsAppLink}
               >
                 {isOpenNow() ? 'Enviar Mensagem' : 'Deixar Mensagem'}
               </button>

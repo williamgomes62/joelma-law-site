@@ -47,6 +47,22 @@ header .menu-mobile {
   z-index: 1;
 }
 
+header .opening-hours {
+  max-width: 460px;
+}
+
+@media (hover: hover) {
+  header .opening-hours button svg:hover {
+    background-color: rgb(37 99 235);
+  }
+}
+
+@media (hover: none) {
+  header .opening-hours button svg:active {
+    background-color: rgb(37 99 235);
+  }
+}
+
 /* .logo img {
   height: 50px;
 }
