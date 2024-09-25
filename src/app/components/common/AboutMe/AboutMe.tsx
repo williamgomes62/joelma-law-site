@@ -52,6 +52,26 @@ const AboutMe = () => {
         >
           <h3 className="text-xl text-gray-500 mb-2">Meu perfil</h3>
           <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6">Sobre Mim</h2>
+
+          {/* Imagem de Perfil no Mobile */}
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={controlsImage}
+            className="block md:hidden relative h-80 w-full mb-6"
+          >
+            <div className="absolute inset-0 rounded-lg">
+              <Image
+                src='/assets/images/about-me.jpeg'
+                alt="Perfil"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_40%)]"></div>
+            </div>
+          </motion.div>
+
+          {/* Corpo do Texto */}
           <div className="mb-8">
             <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
               <strong className="text-blue-800">Prazer, sou a Dra. Joelma Lima, mas pode me chamar de Jô 😉</strong>. Sou apaixonada pelo que faço, especializada em direito previdenciário e assistencial. Com anos de experiência e um profundo entendimento das leis e regulamentos, me comprometo em fornecer a melhor consultoria e representação jurídica possível.
@@ -70,7 +90,7 @@ const AboutMe = () => {
               <strong className="text-blue-800">Registro:</strong> OAB 186.981/MG
             </p>
           </div>
-          
+
           {/* Redes Sociais e Call to Action */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex space-x-4 mb-6">
@@ -91,8 +111,8 @@ const AboutMe = () => {
             </a>
           </div>
         </motion.div>
-        
-        {/* Imagem de Perfil com Gradiente Personalizado e Efeitos de Estilo */}
+
+        {/* Imagem de Perfil para Desktop */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={controlsImage}
@@ -106,7 +126,7 @@ const AboutMe = () => {
               objectFit="cover"
               className="rounded-r-lg"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_40%)]"></div>
+            <div className="absolute inset-0 md:bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_60%)]"></div>
           </div>
         </motion.div>
       </div>

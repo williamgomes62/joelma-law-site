@@ -1,22 +1,16 @@
-/* src/styles/Header.css */
-
 header {
-  /* background: rgba(0, 0, 0, 0.32); */
-  /* position: fixed;
-  width: 100%; */
-  /* background: rgba(255, 255, 255, 0.76) !important;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  backdrop-filter: blur(88px); */
   background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
 }
 
-header .main-menu.scrolled {
-  background-color: rgba(0, 0, 0, 0.32);
+header .top-menu {
+  /* background-color: rgba(0, 0, 0, 0.32); */
   /* background-color: rgb(31 41 55); */
+  backdrop-filter: blur(8px);
+}
+
+header .main-menu.scrolled {
+  /* background-color: rgba(0, 0, 0, 0.32); */
+  background-color: rgb(36 50 68);
   backdrop-filter: blur(8px);
 }
 
@@ -24,6 +18,24 @@ header .main-menu.scrolled a,
 header .main-menu.scrolled .logo,
 header .main-menu.scrolled button {
   color: #FFF;
+}
+
+header .logo {
+  position: relative;
+}
+
+header .logo svg {
+  transform: translate(0px,500px) scale(0.1px,-0.1px);
+  /* width: 100%; */
+  height: auto;
+  position: absolute;
+  top: -343px;
+  left: -263px;
+  scale: 0.34;
+}
+
+header .logo svg path {
+  fill: #FFF;
 }
 
 /* .logo img {
