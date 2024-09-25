@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import Link from 'next/link';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
@@ -49,6 +50,7 @@ const Footer = () => {
               {title === 'Links Úteis' && (
                 <ul>
                   <li className="mb-2"><a href="#home-banner" className="hover:text-blue-600">Home</a></li>
+                  <li className="mb-2"><Link className="hover:text-blue-600" href="/bpc-loas">BPC/LOAS</Link></li>
                   <li className="mb-2"><a href="#about" className="hover:text-blue-600">Sobre Mim</a></li>
                   <li className="mb-2"><a href="#services" className="hover:text-blue-600">Serviços</a></li>
                   <li className="mb-2"><a href="#reviews" className="hover:text-blue-600">Depoimentos</a></li>

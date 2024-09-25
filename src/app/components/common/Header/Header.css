@@ -22,6 +22,8 @@ header .main-menu.scrolled button {
 
 header .logo {
   position: relative;
+  width: 136px;
+  height: 100%;
 }
 
 header .logo svg {
@@ -32,10 +34,17 @@ header .logo svg {
   top: -343px;
   left: -263px;
   scale: 0.34;
+  z-index: 0;
+  pointer-events: none;
 }
 
 header .logo svg path {
   fill: #FFF;
+}
+
+header .menu-mobile {
+  position: relative;
+  z-index: 1;
 }
 
 /* .logo img {
