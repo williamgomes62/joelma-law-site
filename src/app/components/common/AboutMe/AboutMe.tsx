@@ -67,7 +67,6 @@ const AboutMe = () => {
                 objectFit="cover"
                 className="rounded-lg"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_40%)]"></div>
             </div>
           </motion.div>
 

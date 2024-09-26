@@ -20,7 +20,7 @@ export default function Banner() {
         />
 
         {/* Overlay with Title and Subtitle */}
-        <div className="absolute text-center px-4 lg:px-0">
+        <div className="absolute  md:tex-left px-4 lg:px-0 container mx-auto max-w-4xl">
           <h1 className="text-3xl lg:text-5xl font-bold">Seu filho com autismo pode ter direito a um salário mínimo do Governo</h1>
           <p className="mt-4 text-xl lg:text-2xl">
             BPC/LOAS é um benefício do INSS para pessoas com autismo

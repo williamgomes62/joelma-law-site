@@ -19,7 +19,7 @@ export default function Stats({ casesAttended, statesServed, yearsOfExperience }
             <h3 className="text-4xl font-bold text-blue-600">+{casesAttended}</h3>
             <p className="text-lg text-gray-700 mt-2">Casos de BPC/LOAS Atendidos</p>
             <p className="text-sm text-gray-600 mt-4">
-              Joelma Lima já ajudou centenas de pessoas a garantir seu direito ao BPC/LOAS. Agora, você pode ser o próximo.
+              Já ajudei centenas de pessoas a garantir seu direito ao BPC/LOAS. Agora, você pode ser o próximo.
             </p>
           </div>
 

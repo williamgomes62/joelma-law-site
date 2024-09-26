@@ -35,7 +35,7 @@ const Footer = () => {
   }, [controls]);
 
   return (
-    <footer ref={ref} className="px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800 py-10">
+    <footer ref={ref} className="px-4 sm:px-6 lg:px-8 bg-gray-200 text-gray-800 py-10">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {['Links Úteis', 'Redes Sociais', 'Contato'].map((title, index) => (

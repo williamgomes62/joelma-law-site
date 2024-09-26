@@ -29,8 +29,92 @@ export default function BpcLoasPage() {
         content={content}
         imageUrl="/assets/images/bpc-LOAS.webp"
         imageAlt="Informações sobre BPC LOAS"
-        reverse={true                                                                                                                                     }
+        reverse={true}
       />
+      {/* Eligibility */}
+      {/* <section className="bg-[rgb(243,244,246)] py-6 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold text-center mb-8 text-[rgb(17,24,39)]">Quem pode receber o BPC LOAS?</h2>
+          <ul className="list-disc list-inside space-y-4 text-lg text-[rgb(75,85,99)]">
+            <li>Pessoas com 65 anos ou mais, com renda familiar per capita inferior a 1/4 do salário mínimo.</li>
+            <li>Pessoas com deficiência de qualquer idade, com renda familiar per capita inferior a 1/4 do salário mínimo.</li>
+            <li>Que não possuam meios de prover a própria manutenção e não sejam beneficiários de outros programas assistenciais.</li>
+          </ul>
+        </div>
+      </section> */}
+      <section className="bg-[rgb(243,244,246)] py-6 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-6 text-[rgb(17,24,39)]">
+            Quem pode receber o BPC LOAS?
+          </h2>
+          <ul className="space-y-2 text-lg text-[rgb(75,85,99)]">
+            <li className="flex items-start">
+              <span className="mr-3 text-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12l2 2l4-4"
+                  />
+                </svg>
+              </span>
+              <p className="text-[rgb(17,24,39)]">
+                <strong>Pessoas com 65 anos ou mais</strong>, com renda familiar per capita inferior a 1/4 do salário mínimo.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12l2 2l4-4"
+                  />
+                </svg>
+              </span>
+              <p className="text-[rgb(17,24,39)]">
+                <strong>Pessoas com deficiência de qualquer idade</strong>, com renda familiar per capita inferior a 1/4 do salário mínimo.
+              </p>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12l2 2l4-4"
+                  />
+                </svg>
+              </span>
+              <p className="text-[rgb(17,24,39)]">
+                Que <strong>não possuam meios de prover a própria manutenção</strong> e não sejam beneficiários de outros programas assistenciais.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <HighlightSection
         diseases={diseases}
         buttonText="Conversar com um advogado especialista em BPC/LOAS"
@@ -115,18 +199,6 @@ export default function BpcLoasPage() {
             </div>
           </div>
         </section> */}
-
-        {/* Eligibility */}
-        <section className="bg-[rgb(243,244,246)] py-12 px-6">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-semibold text-center mb-8 text-[rgb(17,24,39)]">Quem pode receber o BPC LOAS?</h2>
-            <ul className="list-disc list-inside space-y-4 text-lg text-[rgb(75,85,99)]">
-              <li>Pessoas com 65 anos ou mais, com renda familiar per capita inferior a 1/4 do salário mínimo.</li>
-              <li>Pessoas com deficiência de qualquer idade, com renda familiar per capita inferior a 1/4 do salário mínimo.</li>
-              <li>Que não possuam meios de prover a própria manutenção e não sejam beneficiários de outros programas assistenciais.</li>
-            </ul>
-          </div>
-        </section>
 
         {/* How to Apply */}
         {/* <section className="py-12 px-6 bg-[rgb(250,204,21)]">

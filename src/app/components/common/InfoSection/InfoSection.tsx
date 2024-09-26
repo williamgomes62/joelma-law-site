@@ -19,7 +19,7 @@ export default function InfoSection({
   reverse = false,
 }: InfoSectionProps) {
   return (
-    <section className="info-section py-10 px-4 bg-gray-100">
+    <section className="info-section pt-10 pb-6 px-4 bg-gray-100">
       <div className="container mx-auto max-w-4xl">
         <div className={`flex-container flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} md:space-x-8 md:space-x-reverse`}>
           {/* Imagem */}

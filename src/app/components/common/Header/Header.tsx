@@ -171,7 +171,7 @@ const Header = () => {
             >
               <FaTimes className="w-6 h-6 bg-gray-600 text-white rounded-full p-1" />
             </button>
-            <h2 className="text-xl md:text-2xl font-bold text-gray-700 mb-4">Horário de Funcionamento</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-gray-700 mb-4 mr-5">Horário de Funcionamento</h2>
             <ul className="list-none">
               {Object.entries(operatingHours).map(([day, { open, hours }]) => (
                 <li
