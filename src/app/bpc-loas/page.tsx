@@ -44,7 +44,7 @@ export default function BpcLoasPage() {
         </div>
       </section> */}
       <section className="bg-[rgb(243,244,246)] py-6 px-4">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-4xl pr-4">
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-6 text-[rgb(17,24,39)]">
             Quem pode receber o BPC LOAS?
           </h2>
