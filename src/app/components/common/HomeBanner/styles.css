@@ -1,6 +1,7 @@
 .banner {
   /* background-image: url('https://escobaradvogados.com/wp-content/uploads/2019/11/banner-home2.jpg'); */
   width: 100%;
+  max-height: 675px;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 82px;

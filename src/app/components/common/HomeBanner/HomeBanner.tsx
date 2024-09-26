@@ -5,7 +5,7 @@ import whatsAppLink from '@/app/utils/whatsapp-link';
 export default function HomeBanner() {
   return (
     <>
-      <div id="home-banner" className="h-[660px] sm:h-[625px] relative isolate pt-14 px-4 sm:px-6 lg:px-8 bg-white banner">
+      <div id="home-banner" className="h-[100vh] sm:h-[625px] relative isolate pt-14 px-4 sm:px-6 lg:px-8 bg-white banner">
         <div className="background-gradient"></div>
         <img
           src='https://lh3.googleusercontent.com/proxy/iU2s7uDIh4FL-0Gc-qkHKfwqHTbAQskFW_vExOofEWtH94wR0gwn0dSlGyXCFKtHdU4T36PTuZRg06py_uNJljYVe2OgqpJc9Iv_aLsXSt7J-o_DJV-n1-cz'
