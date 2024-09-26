@@ -49,7 +49,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">{title}</h3>
               {title === 'Links Úteis' && (
                 <ul>
-                  <li className="mb-2"><a href="#home-banner" className="hover:text-blue-600">Home</a></li>
+                  <li className="mb-2"><Link className="hover:text-blue-600" href="/">Home</Link></li>
                   <li className="mb-2"><Link className="hover:text-blue-600" href="/bpc-loas">BPC/LOAS</Link></li>
                   <li className="mb-2"><a href="#about" className="hover:text-blue-600">Sobre Mim</a></li>
                   <li className="mb-2"><a href="#services" className="hover:text-blue-600">Serviços</a></li>

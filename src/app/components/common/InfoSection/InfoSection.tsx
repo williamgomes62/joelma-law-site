@@ -1,5 +1,6 @@
 "use client";
 
+import whatsAppLink from '@/app/utils/whatsapp-link';
 import Image from 'next/image';
 import './styles.css';
 
@@ -38,7 +39,7 @@ export default function InfoSection({
             {/* Botão de call to action */}
             <div className="mt-4 text-center">
               <a 
-                href="/contato" 
+                href={whatsAppLink} 
                 className="inline-block px-8 py-3 bg-blue-600 text-white text-base font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
                 style={{ boxShadow: '0 6px 15px rgba(0, 0, 0, 0.3)' }}  // Box-shadow mais forte
               >

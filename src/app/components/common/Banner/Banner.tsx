@@ -1,5 +1,5 @@
 "use client";
-
+import './styles.css';
 import Image from 'next/image';
 
 export default function Banner() {
@@ -9,7 +9,7 @@ export default function Banner() {
   ];
   return (
     <>
-      <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center text-white">
+      <div className="relative banner-secondary w-full h-[375px] lg:h-[500px] flex items-center justify-center text-white pt-20">
         {/* Background Image */}
         <Image
           src="/assets/images/banner-bpc-loas.png" // Substitua pelo caminho da imagem
@@ -20,9 +20,9 @@ export default function Banner() {
         />
 
         {/* Overlay with Title and Subtitle */}
-        <div className="absolute  md:tex-left px-4 lg:px-0 container mx-auto max-w-4xl">
-          <h1 className="text-3xl lg:text-5xl font-bold">Seu filho com autismo pode ter direito a um salário mínimo do Governo</h1>
-          <p className="mt-4 text-xl lg:text-2xl">
+        <div className="absolute text-center md:tex-left px-4 lg:px-0 container mx-auto max-w-4xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">Seu filho com autismo pode ter direito a um salário mínimo do Governo</h1>
+          <p className="mt-4 text-lg lg:text-xl">
             BPC/LOAS é um benefício do INSS para pessoas com autismo
           </p>
         </div>

@@ -5,6 +5,7 @@ import HighlightSection from "../components/common/HighlightSection/HighlightSec
 import InfoSection from "../components/common/InfoSection/InfoSection";
 import { FaInfoCircle, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Stats from "../components/common/Stats/Stats";
+import whatsAppLink from "../utils/whatsapp-link";
 
 export default function BpcLoasPage() {
   const content = [
@@ -47,7 +48,7 @@ export default function BpcLoasPage() {
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-6 text-[rgb(17,24,39)]">
             Quem pode receber o BPC LOAS?
           </h2>
-          <ul className="space-y-2 text-lg text-[rgb(75,85,99)]">
+          <ul className="space-y-2 text-md md:text-lg text-[rgb(75,85,99)]">
             <li className="flex items-center">
               <span className="mr-3 text-blue-600">
                 <svg
@@ -118,7 +119,7 @@ export default function BpcLoasPage() {
       <HighlightSection
         diseases={diseases}
         buttonText="Conversar com um advogado especialista em BPC/LOAS"
-        buttonLink="/contato"
+        buttonLink={whatsAppLink}
       />
       <Stats
         casesAttended={50}

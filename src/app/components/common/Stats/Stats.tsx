@@ -1,5 +1,7 @@
 "use client";
 
+import whatsAppLink from "@/app/utils/whatsapp-link";
+
 interface StatsProps {
   casesAttended: number; // Número de casos atendidos
   statesServed: number; // Número de estados atendidos
@@ -44,7 +46,7 @@ export default function Stats({ casesAttended, statesServed, yearsOfExperience }
 
         <div className="mt-8 text-center">
           <a 
-            href="/contato"
+            href={whatsAppLink}
             className="inline-block mt-0 md:mt-4 px-8 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
             style={{ boxShadow: '0 6px 15px rgba(0, 0, 0, 0.3)' }}  // Box-shadow mais forte
           >
