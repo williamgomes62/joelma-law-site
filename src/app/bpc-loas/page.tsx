@@ -48,7 +48,7 @@ export default function BpcLoasPage() {
             Quem pode receber o BPC LOAS?
           </h2>
           <ul className="space-y-2 text-lg text-[rgb(75,85,99)]">
-            <li className="flex items-start">
+            <li className="flex items-center">
               <span className="mr-3 text-blue-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default function BpcLoasPage() {
                 <strong>Pessoas com 65 anos ou mais</strong>, com renda familiar per capita inferior a 1/4 do salário mínimo.
               </p>
             </li>
-            <li className="flex items-start">
+            <li className="flex items-center">
               <span className="mr-3 text-blue-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ export default function BpcLoasPage() {
                 <strong>Pessoas com deficiência de qualquer idade</strong>, com renda familiar per capita inferior a 1/4 do salário mínimo.
               </p>
             </li>
-            <li className="flex items-start">
+            <li className="flex items-center">
               <span className="mr-3 text-blue-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
