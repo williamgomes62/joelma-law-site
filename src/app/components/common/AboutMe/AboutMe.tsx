@@ -61,7 +61,7 @@ const AboutMe = () => {
           >
             <div className="absolute inset-0 rounded-lg">
               <Image
-                src='/assets/images/about-me.jpeg'
+                src='/assets/images/about-me.png'
                 alt="Perfil"
                 layout="fill"
                 objectFit="cover"
@@ -119,13 +119,16 @@ const AboutMe = () => {
         >
           <div className="absolute inset-0 rounded-r-lg">
             <Image
-              src='/assets/images/about-me.jpeg'
+              src='/assets/images/about-me-svg.svg'
               alt="Perfil"
               layout="fill"
               objectFit="cover"
               className="rounded-r-lg"
             />
-            <div className="absolute inset-0 md:bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_60%)]"></div>
+            <div className="absolute inset-x-0 top-0 h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter" style={{
+              background: "linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)"
+            }}></div>
+            {/* <div className="absolute inset-0 md:bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_60%)]"></div> */}
           </div>
         </motion.div>
       </div>
