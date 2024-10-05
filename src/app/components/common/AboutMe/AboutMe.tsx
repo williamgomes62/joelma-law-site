@@ -42,8 +42,8 @@ const AboutMe = () => {
   }, [controlsText, controlsImage]);
 
   return (
-    <section id="about" ref={ref} className="px-4 sm:px-6 lg:px-8 bg-gray-100 py-10 relative overflow-hidden">
-      <div className="container mx-auto flex flex-col md:flex-row">
+    <section id="about" ref={ref} className="about-me px-4 sm:px-6 lg:px-8 bg-gray-100 py-10 relative overflow-hidden">
+      <div className="container gap-6 mx-auto flex flex-col md:flex-row">
         {/* Bloco de Texto */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -59,14 +59,15 @@ const AboutMe = () => {
             animate={controlsImage}
             className="block md:hidden relative h-80 w-full mb-6"
           >
-            <div className="absolute inset-0 rounded-lg">
+            <div className="absolute inset-0 rounded-lg overflow-hidden">
               <Image
-                src='/assets/images/about-me.jpeg'
+                src='/assets/images/about-me-blur.jpeg'
                 alt="Perfil"
                 layout="fill"
                 objectFit="cover"
-                className="rounded-lg"
+                className="rounded-lg mobile-img"
               />
+              <div className="mobile-img-background"></div>
             </div>
           </motion.div>
 
@@ -82,7 +83,7 @@ const AboutMe = () => {
               Estou aqui para ajudar você a entender seus direitos e a navegar pelo complexo mundo jurídico com confiança. Entre em contato para uma consulta personalizada e descubra como posso ajudar a resolver suas questões jurídicas.
             </p>
             <p className="text-gray-700 leading-relaxed text-md md:text-lg">
-              <strong className="text-blue-800">Minhas credenciais:</strong> Formado pela FUPAC, com especialização em direito previdenciário. Além disso, sigo participando de diversos cursos e seminários para manter-me atualizada com as mudanças na legislação.
+              <strong className="text-blue-800">Minhas credenciais:</strong> Formada pela FUPAC, com especialização em direito previdenciário. Além disso, sigo participando de diversos cursos e seminários para manter-me atualizada com as mudanças na legislação.
             </p>
             <br />
             <p className="text-gray-700 leading-relaxed text-md md:text-lg">
@@ -115,17 +116,17 @@ const AboutMe = () => {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={controlsImage}
-          className="hidden md:block md:w-1/2 relative h-screen overflow-hidden"
+          className="hidden sm:block sm:w-1/2 relative"
         >
-          <div className="absolute inset-0 rounded-r-lg">
+          <div className="portrait">
             <Image
-              src='/assets/images/about-me.jpeg'
+              src='/assets/images/about-me-blur.jpeg'
               alt="Perfil"
               layout="fill"
               objectFit="cover"
-              className="rounded-r-lg"
+              className="rounded-lg"
             />
-            <div className="absolute inset-0 md:bg-[linear-gradient(to_right,_rgb(243,_244,_246,_var(--tw-bg-opacity)),_transparent_60%)]"></div>
+            <div className="portrait-effect rounded-lg"></div>
           </div>
         </motion.div>
       </div>
