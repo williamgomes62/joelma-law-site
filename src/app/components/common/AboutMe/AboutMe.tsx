@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './styles.css';
@@ -55,19 +55,19 @@ const AboutMe = () => {
 
           {/* Imagem de Perfil no Mobile */}
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ x: -100, opacity: 0 }}
             animate={controlsImage}
-            className="block md:hidden relative h-80 w-full mb-6"
+            className="mobile-img-container block md:hidden relative w-full mb-11"
           >
-            <div className="absolute inset-0 rounded-lg overflow-hidden">
+            <div className="rounded-lg overflow-hidden">
               <Image
                 src='/assets/images/about-me-blur.jpeg'
                 alt="Perfil"
                 layout="fill"
                 objectFit="cover"
-                className="rounded-lg mobile-img"
+                className="rounded-xl mobile-img"
               />
-              <div className="mobile-img-background"></div>
+              <div className="portrait-effect-mobile rounded-xl"></div>
             </div>
           </motion.div>
 
@@ -116,7 +116,7 @@ const AboutMe = () => {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={controlsImage}
-          className="hidden sm:block sm:w-1/2 relative"
+          className="desktop-img-container hidden sm:block sm:w-1/2 relative"
         >
           <div className="portrait">
             <Image
@@ -124,9 +124,9 @@ const AboutMe = () => {
               alt="Perfil"
               layout="fill"
               objectFit="cover"
-              className="rounded-lg"
+              className="rounded-xl"
             />
-            <div className="portrait-effect rounded-lg"></div>
+            <div className="portrait-effect rounded-xl"></div>
           </div>
         </motion.div>
       </div>
