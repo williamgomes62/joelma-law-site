@@ -1,25 +1,19 @@
 "use client";
 
-import { FaStethoscope, FaSyringe, FaHandHoldingHeart, FaBrain, FaBone } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
-const iconStyles = "inline-block text-blue-600 mr-4";
+type Disease = {
+  diase: string;
+  icon: IconType;
+};
 
 interface HighlightSectionProps {
-  diseases: string[]; // Array de strings com as doenças
+  diseases: Disease[]; // Array de strings com as doenças
   buttonText: string; // Texto do botão
   buttonLink: string; // Link do botão
 }
 
 export default function HighlightSection({ diseases, buttonText, buttonLink }: HighlightSectionProps) {
-  // Ícones associados a cada doença
-  const icons = [
-    <FaStethoscope className={iconStyles} key="1" />,
-    <FaSyringe className={iconStyles} key="2" />,
-    <FaHandHoldingHeart className={iconStyles} key="3" />,
-    <FaBrain className={iconStyles} key="4" />,
-    <FaBone className={iconStyles} key="5" />
-  ];
-
   return (
     <section className="pb-10 pt-4 md:pt-6 px-4 bg-gradient-to-b from-gray-100 to-gray-300">
       <div className="container mx-auto max-w-4xl">
@@ -36,8 +30,8 @@ export default function HighlightSection({ diseases, buttonText, buttonLink }: H
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 mb-6 max-w-full">
             {diseases.map((disease, index) => (
               <div key={index} className="flex items-center text-md md:text-lg text-gray-800">
-                {icons[index % icons.length]} {/* Rotação de ícones */}
-                <span>{disease}</span>
+                {disease.icon} {/* Rotação de ícones */}
+                <span>{disease.diase}</span>
               </div>
             ))}
           </div>

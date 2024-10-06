@@ -3,22 +3,47 @@ import Footer from "../components/common/Footer/Footer";
 import Header from "../components/common/Header/Header";
 import HighlightSection from "../components/common/HighlightSection/HighlightSection";
 import InfoSection from "../components/common/InfoSection/InfoSection";
-import { FaInfoCircle, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Stats from "../components/common/Stats/Stats";
 import whatsAppLink from "../utils/whatsapp-link";
+import { FaBrain, FaEye, FaHeartbeat, FaUserAltSlash } from 'react-icons/fa'; // Font Awesome
+import { GiRibbon, GiBrokenHeart } from 'react-icons/gi'; // Game Icons
+import { MdMoodBad, MdOutlinePsychology } from 'react-icons/md'; // Material Design Icons
+import { BsPersonBoundingBox } from 'react-icons/bs'; // Bootstrap Icons
+import { AiOutlineEyeInvisible } from 'react-icons/ai'; // Ant Design Icons
 
 export default function BpcLoasPage() {
+
+  const iconStyles = "inline-block text-blue-600 mr-4";
   const content = [
     "O Benefício de Prestação Continuada (BPC LOAS) é um benefício assistencial previsto na Lei Orgânica da Assistência Social (LOAS). É destinado a garantir um salário mínimo mensal para pessoas idosas com 65 anos ou mais e pessoas com deficiência de qualquer idade, que comprovem não possuir meios de prover a própria manutenção e cuja renda familiar per capita seja inferior a 1/4 do salário mínimo.",
     "O BPC LOAS não requer contribuição prévia ao INSS e é um direito previsto para assegurar a dignidade e o bem-estar dos beneficiários."
   ];
+
   const diseases = [
-    'Deficiência visual severa',
-    'Deficiência auditiva severa',
-    'Deficiência física grave',
-    'Deficiência mental severa',
-    'Esclerose múltipla',
-    'Doenças neurodegenerativas'
+    {
+      diase: 'AUTISMO',
+      icon: <FaBrain className={iconStyles}/>
+    },
+    {
+      diase: 'HIV/AIDS',
+      icon: <GiRibbon className={iconStyles}/>
+    },
+    {
+      diase: 'VISÃO MONOCULAR',
+      icon: <AiOutlineEyeInvisible className={iconStyles}/>
+    },
+    {
+      diase: 'ESQUIZOFRENIA',
+      icon: <MdOutlinePsychology className={iconStyles}/>
+    },
+    {
+      diase: 'DEPRESSÃO',
+      icon: <MdMoodBad className={iconStyles}/>
+    },
+    {
+      diase: 'RETARDO MENTAL',
+      icon: <BsPersonBoundingBox className={iconStyles}/>
+    }
   ];
 
   return (
@@ -122,9 +147,9 @@ export default function BpcLoasPage() {
         buttonLink={whatsAppLink}
       />
       <Stats
-        casesAttended={50}
+        casesAttended={500}
         statesServed={26}
-        yearsOfExperience={7}
+        yearsOfExperience={10}
       />
       {/* <section className="py-10 bg-white sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

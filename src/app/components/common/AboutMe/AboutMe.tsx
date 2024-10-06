@@ -73,19 +73,21 @@ const AboutMe = () => {
 
           {/* Corpo do Texto */}
           <div className="mb-8">
-            <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
+            <p className="text-gray-700 mb-4 leading-relaxed text-md md:text-lg">
               <strong className="text-blue-800">Prazer, sou a Dra. Joelma Lima, mas pode me chamar de Jô 😉</strong>. Sou apaixonada pelo que faço, especializada em direito previdenciário e assistencial. Com anos de experiência e um profundo entendimento das leis e regulamentos, me comprometo em fornecer a melhor consultoria e representação jurídica possível.
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
+            <p className="text-gray-700 mb-4 leading-relaxed text-md md:text-lg">
               Minha abordagem é baseada na empatia e no comprometimento com as necessidades dos meus clientes. Acredito que cada caso é único e merece atenção e estratégia personalizadas para alcançar o melhor resultado possível.
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed text-md md:text-lg">
+            <p className="text-gray-700 mb-4 leading-relaxed text-md md:text-lg">
               Estou aqui para ajudar você a entender seus direitos e a navegar pelo complexo mundo jurídico com confiança. Entre em contato para uma consulta personalizada e descubra como posso ajudar a resolver suas questões jurídicas.
             </p>
-            <p className="text-gray-700 leading-relaxed text-md md:text-lg">
+            <p className="text-gray-700 mb-4 leading-relaxed text-md md:text-lg">
               <strong className="text-blue-800">Minhas credenciais:</strong> Formada pela FUPAC, com especialização em direito previdenciário. Além disso, sigo participando de diversos cursos e seminários para manter-me atualizada com as mudanças na legislação.
             </p>
-            <br />
+            <p className="text-gray-700 mb-4 leading-relaxed text-md md:text-lg">
+              <strong className="text-blue-800">Especializações:</strong> Direito Previdenciário e  Direito da Saúde.
+            </p>
             <p className="text-gray-700 leading-relaxed text-md md:text-lg">
               <strong className="text-blue-800">Registro:</strong> OAB 186.981/MG
             </p>
