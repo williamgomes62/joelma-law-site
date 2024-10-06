@@ -1,10 +1,8 @@
 "use client";
 
-import { IconType } from 'react-icons';
-
 type Disease = {
   diase: string;
-  icon: IconType;
+  icon: JSX.Element;
 };
 
 interface HighlightSectionProps {
@@ -30,7 +28,7 @@ export default function HighlightSection({ diseases, buttonText, buttonLink }: H
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 mb-6 max-w-full">
             {diseases.map((disease, index) => (
               <div key={index} className="flex items-center text-md md:text-lg text-gray-800">
-                {disease.icon} {/* Rotação de ícones */}
+                {disease.icon}
                 <span>{disease.diase}</span>
               </div>
             ))}
@@ -39,7 +37,7 @@ export default function HighlightSection({ diseases, buttonText, buttonLink }: H
             <a 
               href={buttonLink} 
               className="inline-block px-6 py-3 md:px-10 md:py-4 bg-blue-600 text-white text-base md:text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
-              style={{ boxShadow: '0 8px 20px rgba(0, 0, 0, 0.4)' }}  // Box-shadow mais forte
+              style={{ boxShadow: '0 8px 20px rgba(0, 0, 0, 0.4)' }}
             >
               {buttonText}
             </a>
