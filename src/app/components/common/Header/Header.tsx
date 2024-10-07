@@ -89,18 +89,20 @@ const Header = () => {
           <div className="container mx-auto flex flex-wrap justify-between items-center">
             <div className="text-sm flex items-center space-x-4">
               <div className="flex items-center">
+                <FaEnvelope className="mr-2 hidden md:block" />
                 <FaEnvelope
                   onClick={() => handleOpenContactModal('E-mail', 'joelmalimadv@gmail.com')}
-                  className="mr-2"
+                  className="mr-2 md:hidden block"
                   />
-                <span className="hidden sm:inline">joelmalimadv@gmail.com</span>
+                <span className="hidden md:inline">joelmalimadv@gmail.com</span>
               </div>
               <div className="flex items-center">
+                <FaPhoneAlt className="mr-2 hidden md:block" />
                 <FaPhoneAlt
                   onClick={() => handleOpenContactModal('Telefone', '31995792679')}
-                  className="mr-2"
+                  className="mr-2 md:hidden block"
                 />
-                <span className="hidden sm:inline">(31) 99579-2679</span>
+                <span className="hidden md:inline">(31) 99579-2679</span>
               </div>
               <div className="flex items-center">
                 <FaClock className="mr-2 cursor-pointer" onClick={toggleModal} />
@@ -108,7 +110,7 @@ const Header = () => {
               <div className="flex items-center">
                 <a className="flex items-center" href="https://www.google.com/localservices/prolist?g2lbs=AOHF13kittLpUc3ea-mTLcYBx7H1IgnB9vFRmpMhOeGhs8T9sU1YPT022h_TXEZakihTG5bBfb-PgLLA5Pto5ZzHP2rKJiDI85JPkiZG5hS3rPYFtrqU8DI%3D&hl=pt-BR&gl=br&cs=1&ssta=1&oq=joelma%20lima%20advogada&src=2&lrlstt=1722392223378&q=Joelma%20Lima%20Advocacia&ved=2ahUKEwjc5K37ndCHAxVnF7kGHcGhC5IQjdcJegQIABAF&scp=CgtnY2lkOmxhd3llchIAGgAqCEFkdm9nYWRv&slp=MgBAAVIECAIgAIgBAA%3D%3D&spp=Cg0vZy8xMXYwbXE5dGd6OoABV2gwUUFCQUJFQUlpRldwdlpXeHRZU0JzYVcxaElHRmtkbTlqWVdOcFlhb0JQaEFCTWg4UUFTSWI0REVaQTg0VV9rQ0doQzFLSS1uYTR4YUN4LWhqN1QtMjN1U3JNaGtRQWlJVmFtOWxiRzFoSUd4cGJXRWdZV1IyYjJOaFkybGg%3D" target="_blank" rel="noopener noreferrer">
                   <FaMapMarkerAlt className="mr-2" />
-                  <span className="hidden sm:inline">Av. N. Sra. do Carmo, 425, Mariana</span>
+                  <span className="hidden md:inline">Av. N. Sra. do Carmo, 425, Mariana</span>
                 </a>
               </div>
             </div>

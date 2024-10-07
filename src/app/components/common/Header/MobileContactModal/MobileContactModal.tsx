@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void; contactType: string; contactInfo: string }> = ({ isOpen, onClose, contactType, contactInfo }) => {
   if (!isOpen) return null;
@@ -9,47 +10,48 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void; contactType
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative bg-white p-6 rounded-lg shadow-lg w-80 text-center">
-        
-        {/* Botão de fechar no canto superior direito com borda suave */}
+    <div className="fixed inset-0 flex px-4 items-center justify-center bg-black bg-opacity-60 z-50 transition-opacity duration-300 ease-in-out">
+      <div className="relative bg-white rounded-lg shadow-lg p-8 max-w-sm w-full transform transition-all duration-300 ease-in-out scale-100 hover:scale-105">
+
+        {/* Botão de fechar no canto superior direito */}
         <button
           onClick={onClose}
           aria-label="Fechar modal"
-          className="absolute top-[-10px] right-[-10px] bg-gray-100 rounded-full p-2 border border-gray-300 hover:bg-gray-200 active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all"
+          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
         >
           <span className="sr-only">Fechar</span>
-          <div className="w-5 h-5 text-gray-600 relative">
-            <span className="absolute inset-0 bg-gray-600 w-[2px] h-full rotate-45"></span>
-            <span className="absolute inset-0 bg-gray-600 w-[2px] h-full -rotate-45"></span>
-          </div>
+          <FaTimes className="w-6 h-6 bg-gray-600 text-white rounded-full p-1" />
         </button>
 
-        <h2 className="text-xl font-semibold">{contactType === 'Telefone' ? 'Número de Telefone' : 'Endereço de E-mail'}</h2>
-        <p className="text-gray-700 mt-2">{contactInfo}</p>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-700 mb-4 mr-5">
+          {contactType === 'Telefone' ? 'Número de Telefone' : 'Endereço de E-mail'}
+        </h2>
+        <p className="text-gray-700 text-center p-1 text-lg md:p-2">{contactInfo}</p>
 
-        <button
-          onClick={() => copyToClipboard(contactInfo)}
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 active:bg-blue-700 w-full"
-        >
-          Copiar
-        </button>
+        <div className="flex flex-col mt-4 space-y-3">
+          {contactType === 'Telefone' ? (
+            <a
+              href={`tel:${contactInfo}`}
+              className="bg-blue-600 text-white py-2 px-4 text-center rounded-lg shadow-md hover:bg-blue-700 active:bg-blue-800 transition duration-150 ease-in-out transform hover:scale-105"
+            >
+              Ligar Agora
+            </a>
+          ) : (
+            <a
+              href={`mailto:${contactInfo}`}
+              className="bg-blue-600 text-white text-center py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 active:bg-blue-800 transition duration-150 ease-in-out transform hover:scale-105"
+            >
+              Enviar E-mail
+            </a>
+          )}
 
-        {contactType === 'Telefone' ? (
-          <a
-            href={`tel:${contactInfo}`}
-            className="mt-3 inline-block w-full text-blue-500 hover:underline"
+          <button
+            onClick={() => copyToClipboard(contactInfo)}
+            className="inline-block w-full text-center text-blue-600 hover:underline font-medium transition duration-150 ease-in-out transform hover:scale-105"
           >
-            Ligar Agora
-          </a>
-        ) : (
-          <a
-            href={`mailto:${contactInfo}`}
-            className="mt-3 inline-block w-full text-blue-500 hover:underline"
-          >
-            Enviar E-mail
-          </a>
-        )}
+            Copiar
+          </button>
+        </div>
       </div>
     </div>
   );
