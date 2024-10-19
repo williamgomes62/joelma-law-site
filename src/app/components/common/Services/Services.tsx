@@ -37,7 +37,7 @@ const services: Service[] = [
   {
     icon: <FaHeartbeat size={40} className="text-blue-600" />,
     title: 'Direito da Saúde',
-    description: 'Consultoria e representação em casos relacionados a direito à saúde.'
+    description: 'Consultoria e representação em casos relacionados a direito da saúde.'
   }
   // Adicione mais serviços conforme necessário
 ];
