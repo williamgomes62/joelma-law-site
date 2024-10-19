@@ -5,7 +5,7 @@ import {
   FaBalanceScale,
   FaShieldAlt,
   FaUserShield,
-  FaUsers,
+  FaHeartbeat,
   FaCheckCircle
 } from 'react-icons/fa';
 import './styles.css';
@@ -35,9 +35,9 @@ const services: Service[] = [
     description: 'Proteção e defesa dos direitos do consumidor.'
   },
   {
-    icon: <FaUsers size={40} className="text-blue-600" />,
-    title: 'Direito da Família',
-    description: 'Consultoria e representação em questões de direito familiar.'
+    icon: <FaHeartbeat size={40} className="text-blue-600" />,
+    title: 'Direito da Saúde',
+    description: 'Consultoria e representação em casos relacionados a direito à saúde.'
   }
   // Adicione mais serviços conforme necessário
 ];

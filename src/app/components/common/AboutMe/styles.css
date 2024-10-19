@@ -5,15 +5,20 @@
 
 @media (min-width: 768px) {
   .about-me .portrait {
-    max-width: 400px;
-    height: 100%;
+    max-width: 380px;
+    /* height: 100%; */
     max-height: 715px;
     margin: 0 auto;
+    aspect-ratio: var(--about-img-aspect-ratio);
   }
 
   .about-me .portrait img {
     z-index: 1;
   }
+}
+
+@media (min-width: 1366px) {
+  max-width: 400px;
 }
 
 .about-me .mobile-img {
