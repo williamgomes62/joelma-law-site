@@ -9,6 +9,8 @@ const Footer = () => {
   const controls = useAnimation();
   const ref = useRef(null);
 
+  const currentYear = new Date().getFullYear();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -95,7 +97,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="border-t border-gray-300 mt-8 pt-4 text-center">
-          <p>&copy; 2024 Joelma Lima. Todos os direitos reservados.</p>
+          <p>&copy; {currentYear} Joelma Lima. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
