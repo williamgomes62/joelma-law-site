@@ -8,6 +8,10 @@ header .top-menu {
   backdrop-filter: blur(8px);
 }
 
+header .address-marker {
+  pointer-events: none;
+}
+
 header .main-menu.scrolled {
   /* background-color: rgba(0, 0, 0, 0.32); */
   background-color: rgb(36 50 68);
